@@ -339,23 +339,25 @@ const GameMap = {
     },
 
     _getCityClass(city) {
-        let pop = Number.isFinite(city && city.inhabitants) ? city.inhabitants : 0;
-        if (!pop) {
-            const settlementType = String((city && (city.settlementType || city.type)) || '').toLowerCase();
-            if (settlementType === 'municipality' || settlementType === 'comune') {
-                pop = 30000;
-            } else if ((city && city.tier) === 1) {
-                pop = 800000;
-            } else if ((city && city.tier) === 2) {
-                pop = 200000;
-            } else {
-                pop = 80000;
-            }
-        }
-        if (pop < 50000) return 'comune';
-        if (pop < 150000) return 'citta_piccola';
-        if (pop < 500000) return 'citta_media';
-        return 'citta_grande';
+        if (!city) return 'comune';
+        
+        // Se è già presente un settlementType valido, usalo
+        const st = String(city.settlementType || '').toLowerCase();
+        const validTypes = ['comune', 'citta_piccola', 'citta_media', 'citta_grande'];
+        if (validTypes.includes(st)) return st;
+
+        // Fallback su tier
+        if (city.tier === 1) return 'citta_grande';
+        if (city.tier === 2) return 'citta_media';
+        if (city.tier === 3) return 'citta_piccola';
+        
+        // Fallback su popolazione
+        let pop = Number.isFinite(city.inhabitants) ? city.inhabitants : 0;
+        if (pop >= 500000) return 'citta_grande';
+        if (pop >= 150000) return 'citta_media';
+        if (pop >= 50000) return 'citta_piccola';
+        
+        return 'comune';
     },
 
     _normalizeCity(city, defaultNationId = 'italy') {
@@ -762,21 +764,25 @@ const GameMap = {
     },
 
     _getMarkerTypeText(city) {
-        const cityClass = (city && city.cityClass) || this._getCityClass(city);
-        if (cityClass === 'comune') return 'Comune';
-        if (cityClass === 'citta_piccola') return 'Citta piccola';
-        if (cityClass === 'citta_media') return 'Citta media';
-        if (cityClass === 'citta_grande') return 'Citta grande';
-        return 'Citta';
+        const cls = this._getCityClass(city);
+        const map = {
+            'citta_grande': 'Grande città',
+            'citta_media': 'Città media',
+            'citta_piccola': 'Città piccola',
+            'comune': 'Comune'
+        };
+        return map[cls] || 'Comune';
     },
 
     _getMarkerPopulationRange(city) {
-        const cityClass = (city && city.cityClass) || this._getCityClass(city);
-        if (cityClass === 'comune') return '< 50.000 ab.';
-        if (cityClass === 'citta_piccola') return '50.000 - 150.000 ab.';
-        if (cityClass === 'citta_media') return '150.000 - 500.000 ab.';
-        if (cityClass === 'citta_grande') return '> 500.000 ab.';
-        return 'n/d';
+        const cls = this._getCityClass(city);
+        const map = {
+            'citta_grande': '> 500k ab.',
+            'citta_media': '150k - 500k ab.',
+            'citta_piccola': '50k - 150k ab.',
+            'comune': '< 50k ab.'
+        };
+        return map[cls] || '< 50k ab.';
     },
 
     _addCityMarkers(map, cities, opts = {}) {
@@ -847,12 +853,13 @@ const GameMap = {
             if (isCurrent) {
                 borderColor = '#FFD600';
                 borderWidth = 3;
-                glow = '0 0 8px rgba(255,214,0,0.8)';
+                glow = '0 0 12px rgba(255,214,0,0.9)';
             } else if (isVisited) {
-                borderColor = cityClass === 'citta_grande' ? '#000000' : '#888888';
+                borderColor = '#888888'; // Bordo grigio = visitata
                 borderWidth = 2;
+                glow = 'none';
             } else if (cityClass === 'citta_grande') {
-                borderColor = '#FFFFFF';
+                borderColor = '#FFFFFF'; // Bordo bianco = grande città
                 borderWidth = 3;
                 glow = '0 0 8px rgba(255,255,255,0.6)';
             }
@@ -1417,7 +1424,7 @@ const GameMap = {
                             <div class="legend-item"><div class="legend-marker circle-marker medium-marker"></div><span>Città media</span></div>
                             <div class="legend-item"><div class="legend-marker circle-marker large-marker legend-large-city star-marker"></div><span>Città grande</span></div>
                         </div>
-                        <div class="legend-note">★ = corrente | grigio = visitata | bianco = grande città</div>
+                        <div class="legend-note">★ = corrente | bordo grigio = visitata | bordo bianco = grande città</div>
                     </div>
                     <div id="desk-map" class="desk-map"></div>
                     <div id="transfer-info" class="transfer-info hidden"></div>

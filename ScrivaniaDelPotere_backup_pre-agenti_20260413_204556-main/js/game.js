@@ -21,7 +21,7 @@ const Game = {
         actionPoints: 2,
         phoneActions: 2,
 
-        character: { name: '', gender: '', ideology: '', avatar: '' },
+        character: { name: '', gender: '', ideology: '' },
 
         // 🌍 Nazione e Sistema Politico
         nation: {
@@ -397,6 +397,8 @@ const Game = {
         { label: 'Consigliere Comunale', dailySalary: 50 },
         { label: 'Assessore', dailySalary: 100 },
         { label: 'Sindaco / Deputato', dailySalary: 150 },
+        { label: 'Ministro / Premier', dailySalary: 250 },
+        { label: 'Presidente EU', dailySalary: 500 },
     ],
 
     HOME_IMPROVEMENTS_CATALOG: [
@@ -465,6 +467,8 @@ const Game = {
             'Consigliere Comunale',
             'Assessore',
             'Sindaco / Deputato',
+            'Ministro / Premier',
+            'Presidente EU',
         ];
         const nationRoles = (typeof Nations !== 'undefined' && Nations.getCareerRoles)
             ? Nations.getCareerRoles(this.state.nation.id)
@@ -832,6 +836,25 @@ const Game = {
                 pc.level = 4;
                 this.addWorkNotif('🏆 Vittoria Elettorale', `Hai raggiunto il vertice: ${this.getPoliticalRoleLabel(pc.level)}.`, `Giorno ${this.state.day}`);
                 this.emit('political-career-promotion', { level: pc.level });
+                return;
+            }
+        }
+
+        if (pc.level === 4) {
+            if (repN >= 75 && pc.nationalTasksCompleted >= 8 && pc.campaignFunds >= 5000) {
+                pc.level = 5;
+                this.addWorkNotif('🏛️ Nomina Ministeriale', `Sei stato nominato ${this.getPoliticalRoleLabel(pc.level)}.`, `Giorno ${this.state.day}`);
+                this.emit('political-career-promotion', { level: pc.level });
+                return;
+            }
+        }
+
+        if (pc.level === 5) {
+            if (repN >= 90 && pc.debateWins >= 5 && allies >= 8) {
+                pc.level = 6;
+                this.addWorkNotif('🇪🇺 Leadership Europea', `Sei diventato ${this.getPoliticalRoleLabel(pc.level)}.`, `Giorno ${this.state.day}`);
+                this.emit('political-career-promotion', { level: pc.level });
+                return;
             }
         }
     },
@@ -1223,11 +1246,21 @@ const Game = {
         }
 
         if (won) {
+            const maxLevel = (typeof Nations !== 'undefined') ? Nations.getCareerRoles(this.state.nation.id).length - 1 : 4;
+            const currentRole = (typeof Nations !== 'undefined') ? Nations.getCareerRoleForLevel(this.state.politicalCareer.level, this.state.nation.id) : 'Politico';
+
             let office;
-            if (system === 'semi_presidenziale') office = { role: 'Président', dailyMoney: 200, dailyRepLocal: 10, dailyRepNational: 15 };
-            else if (system === 'cancellierato_federale') office = { role: 'Bundeskanzler', dailyMoney: 180, dailyRepLocal: 8, dailyRepNational: 12 };
-            else if (system === 'westminster_maggioritario') office = { role: 'Prime Minister', dailyMoney: 170, dailyRepLocal: 7, dailyRepNational: 14 };
-            else office = { role: 'Presidente del Consiglio', dailyMoney: 150, dailyRepLocal: 5, dailyRepNational: 10 };
+            if (this.state.politicalCareer.level >= maxLevel) {
+                office = { role: currentRole, dailyMoney: 500, dailyRepLocal: 20, dailyRepNational: 30 };
+            } else if (system === 'semi_presidenziale') {
+                office = { role: 'Président', dailyMoney: 200, dailyRepLocal: 10, dailyRepNational: 15 };
+            } else if (system === 'cancellierato_federale') {
+                office = { role: 'Bundeskanzler', dailyMoney: 180, dailyRepLocal: 8, dailyRepNational: 12 };
+            } else if (system === 'westminster_maggioritario') {
+                office = { role: 'Prime Minister', dailyMoney: 170, dailyRepLocal: 7, dailyRepNational: 14 };
+            } else {
+                office = { role: 'Presidente del Consiglio', dailyMoney: 150, dailyRepLocal: 5, dailyRepNational: 10 };
+            }
             e.office = { ...office, active: true };
             const winMsg = (typeof Localization !== 'undefined' && Localization.translate)
                 ? Localization.translate('election.won', { role: office.role })

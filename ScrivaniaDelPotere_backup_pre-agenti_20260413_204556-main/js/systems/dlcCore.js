@@ -1,60 +1,61 @@
 /* ============================================
    DLC CORE LAYER
-   Base hooks for all DLCs + active DLC behaviors
+   Centralized management for DLC modules and synergies
    ============================================ */
 
 const DlcCore = {
+    SUPPORTED_DLCS: {
+        'dlc_giustizia_magistratura': {
+            name: 'Le Toghe',
+            description: 'Sistema giudiziario, magistratura e inchieste.',
+            init: () => { if (typeof Judiciary !== 'undefined') Judiciary.init(); }
+        },
+        'dlc_stampa_media': {
+            name: 'La Stampa',
+            description: 'Giornalisti, testate e conferenze stampa.',
+            init: () => { if (typeof Press !== 'undefined') Press.init(); }
+        },
+        'dlc_politica_estera': {
+            name: 'Diplomazia',
+            description: 'Relazioni internazionali e missioni estere.',
+            init: () => { if (typeof Diplomacy !== 'undefined') Diplomacy.init(); }
+        },
+        'il_vecchio_mondo_expansion': {
+            name: 'Il Vecchio Mondo',
+            description: 'Espansione europea (Spagna, Portogallo, Benelux, Svizzera).',
+            init: () => { /* Logic handled in Nations/Map modules */ }
+        }
+    },
+
     init() {
         this.ensureBaseState();
+        
+        const activeDlcs = (Game.state.flags && Game.state.flags.activeDlc) || [];
+        console.log('DlcCore: Initializing active DLCs...', activeDlcs);
+
+        activeDlcs.forEach(dlcId => {
+            const config = this.SUPPORTED_DLCS[dlcId];
+            if (config && typeof config.init === 'function') {
+                console.log(`DlcCore: Starting module ${dlcId}`);
+                config.init();
+            }
+        });
+
         Game.on('new-day', () => {
-            this.ensureBaseState();
-            this.applyDormantFormulas();
-            this.runBaseEvents();
-            this.runActiveDlcLayers();
+            this.onNewDay();
         });
     },
 
     ensureBaseState() {
         if (!Game.state.flags) Game.state.flags = {};
+        if (!Game.state.dlcFlags) Game.state.dlcFlags = {};
 
+        // Ensure state for legacy systems if needed
         if (!Game.state.justiceSystem) {
             Game.state.justiceSystem = { integrity: 50, corruptionRisk: 0, justiceCorruption: 0, lastBaseEventDay: -99 };
         }
-
-        if (!Game.state.election) Game.state.election = {};
-        if (!Game.state.election.sys) {
-            Game.state.election.sys = { type: 'italian', expansionLevel: 0, consensoBase: 0, consensoDlc: 0 };
-        }
-
         if (!Game.state.media) {
             Game.state.media = { channels: 0, impact: 0, trust: 0, mediaImpact: 0 };
-        }
-
-        if (!Game.state.nationalHistory) {
-            Game.state.nationalHistory = { archives: [], ongoing: '', leggi: [], scandali: [], ele: [], historyMode: false };
-        }
-
-        if (!Game.state.globalNation) {
-            Game.state.globalNation = {
-                list: ['italy', 'france', 'germany', 'uk'],
-                activeNation: (Game.state.nation && Game.state.nation.id) || 'italy',
-                relations: 50,
-                coalitionNumber: 0,
-                foreignInfluence: 0,
-                diplomaticValue: 0,
-            };
-        }
-
-        if (!Game.state.dlcFlags) {
-            Game.state.dlcFlags = {
-                dirittoMafia: false,
-                elezioniGlobali: false,
-                mediaInfodemia: false,
-                storiaItalia: false,
-                geopoliticaDiplomazia: false,
-                mediaLobby: false,
-                diplomacySystem: false,
-            };
         }
     },
 
@@ -63,126 +64,37 @@ const DlcCore = {
         return active.includes(id);
     },
 
-    applyDormantFormulas() {
-        const mafiaRank = Math.round(((Game.state.mafia && Game.state.mafia.rispettoCriminale) || 0) / 10);
-        const followers = (Game.state.social && Game.state.social.followers) || 0;
-
-        Game.state.justiceSystem.justiceCorruption = mafiaRank * 0.1;
-        Game.state.election.sys.consensoBase = (Game.state.reputazione || 0) * 0.5;
-        Game.state.media.mediaImpact = followers * 0.05;
-        Game.state.globalNation.foreignInfluence = (Game.state.globalNation.relations || 0) * 0.1;
+    onNewDay() {
+        this.processSynergies();
+        this.runLegacyLayers();
     },
 
-    runBaseEvents() {
-        const day = Game.state.day || 0;
-
-        if ((day - (Game.state.justiceSystem.lastBaseEventDay || -99)) >= 15 && Math.random() < 0.45) {
-            Game.state.justiceSystem.lastBaseEventDay = day;
-            Game.addWorkNotif('giudiceIndeciso', 'Il giudice temporeggia. Le istituzioni osservano.', `Giorno ${day}`);
-        }
-
-        if (Math.random() < 0.16) {
-            Game.addWorkNotif('eventiElettorali', 'Le elezioni stanno cambiando gli equilibri, ma senza scossoni visibili.', `Giorno ${day}`);
-        }
-
-        if (Math.random() < 0.18) {
-            Game.addWorkNotif('titoloDiGiornale', 'Un titolo di giornale plasma l umore pubblico.', `Giorno ${day}`);
-        }
-
-        if (Math.random() < 0.12) {
-            Game.addWorkNotif('storiaItalia', 'Un richiamo alla storia riemerge nel dibattito nazionale.', `Giorno ${day}`);
-        }
-
-        if (Math.random() < 0.1) {
-            Game.addWorkNotif('nazioneEstera', 'Da una nazione estera arriva un segnale politico ambiguo.', `Giorno ${day}`);
+    processSynergies() {
+        const active = (Game.state.flags && Game.state.flags.activeDlc) || [];
+        
+        // Example Synergy: Press + Judiciary
+        if (active.includes('dlc_giustizia_magistratura') && active.includes('dlc_stampa_media')) {
+            if (Math.random() < 0.1) {
+                Game.addWorkNotif('Sinergia DLC', 'La stampa segue con particolare attenzione le tue vicende giudiziarie.', `Giorno ${Game.state.day}`);
+            }
         }
     },
 
-    runActiveDlcLayers() {
+    // Maintain compatibility with existing logic in runActiveDlcLayers
+    runLegacyLayers() {
         const mafiaRank = Math.round(((Game.state.mafia && Game.state.mafia.rispettoCriminale) || 0) / 10);
-
-        const dirittoMafia = this.isDlcActive('dlc_stato_diritto_crimine');
-        const elezioniGlobali = this.isDlcActive('dlc_elezioni_globali_europa');
-        const mediaInfodemia = this.isDlcActive('dlc_media_infodemia');
-        const storiaItalia = this.isDlcActive('dlc_storia_italia');
-        const geopolitica = this.isDlcActive('dlc_geopolitica_diplomazia');
-
-        Game.state.dlcFlags.dirittoMafia = dirittoMafia;
-        Game.state.dlcFlags.elezioniGlobali = elezioniGlobali;
-        Game.state.dlcFlags.mediaInfodemia = mediaInfodemia;
-        Game.state.dlcFlags.storiaItalia = storiaItalia;
-        Game.state.dlcFlags.geopoliticaDiplomazia = geopolitica;
-
-        if (dirittoMafia) {
+        
+        if (this.isDlcActive('dlc_giustizia_magistratura')) {
             Game.state.justiceSystem.corruptionRisk = Math.min(100, Game.state.justiceSystem.corruptionRisk + Math.max(0, mafiaRank - 2));
             const riskTrial = Math.max(0, 100 - Game.state.justiceSystem.integrity) * mafiaRank;
             Game.state.justiceSystem.riskTrial = riskTrial;
-
-            if (riskTrial > 120 && Math.random() < 0.2) {
-                Events.showUrgentChoice({
-                    type: 'urgent',
-                    title: 'processoInBagno',
-                    body: 'Pressioni sul processo: una scelta puo cambiare tutto.',
-                    from: 'Palazzo di Giustizia',
-                    urgentType: 'mafia',
-                    choices: {
-                        accept: { label: 'Fai pressione', effects: { rischioIndagini: 15, coherence: -10 } },
-                        refuse: { label: 'Lascia fare la giustizia', effects: { coherence: 5, reputazione: -10 } },
-                    },
-                });
-            }
         }
 
-        if (elezioniGlobali) {
-            Game.state.election.sys.expansionLevel = 1;
-            Game.state.election.sys.consensoDlc = (Game.state.reputazione || 0) * (1 + mafiaRank * 0.02);
-            if (Math.random() < 0.14) {
-                Game.addWorkNotif('coalizioneNecessaria', 'Con il sistema elettorale espanso, le coalizioni diventano centrali.', `Giorno ${Game.state.day}`);
-            }
+        if (this.isDlcActive('dlc_stampa_media')) {
+            const followers = (Game.state.social && Game.state.social.followers) || 0;
+            Game.state.media.mediaImpact = followers * 0.05;
         }
-
-        if (mediaInfodemia) {
-            Game.state.dlcFlags.mediaLobby = true;
-            if (Game.state.dlcFlags.mediaLobby) {
-                Game.state.media.trust = Game.state.media.impact * 0.4;
-            }
-            if (Math.random() < 0.16) {
-                const fake = Math.random() < 0.5;
-                if (fake) {
-                    Game.state.media.impact += 30;
-                    Game.changeReputazione(-15);
-                    Game.addWorkNotif('fakeNewsScoppia', 'Una fake news esplode in rete e altera il consenso.', `Giorno ${Game.state.day}`);
-                } else {
-                    Game.changeReputazione(10);
-                    Game.state.media.trust += 15;
-                    Game.addWorkNotif('fattoVerificato', 'Un fact-check ti favorisce e ripulisce l ambiente mediatico.', `Giorno ${Game.state.day}`);
-                }
-            }
-        } else {
-            Game.state.dlcFlags.mediaLobby = false;
-        }
-
-        if (storiaItalia) {
-            Game.state.nationalHistory.historyMode = true;
-            if (Math.random() < 0.12) {
-                const ev = Math.random() < 0.5 ? 'leggeMalata' : 'scandaloClasseAlta';
-                Game.state.nationalHistory.ongoing = ev;
-                Game.state.nationalHistory.archives.push({ ev, day: Game.state.day });
-                Game.addWorkNotif(ev, 'Un evento storico-narrativo condiziona la fase politica.', `Giorno ${Game.state.day}`);
-            }
-        } else {
-            Game.state.nationalHistory.historyMode = false;
-        }
-
-        if (geopolitica) {
-            Game.state.dlcFlags.diplomacySystem = true;
-            Game.state.globalNation.diplomaticValue = (Game.state.globalNation.relations || 0) * (1 + 0.05 * (Game.state.globalNation.coalitionNumber || 0));
-            if (Math.random() < 0.14) {
-                const ev = Math.random() < 0.5 ? 'alleanzaUsa' : 'coalizioneUE';
-                Game.addWorkNotif(ev, 'La diplomazia internazionale ridefinisce margini e alleanze.', `Giorno ${Game.state.day}`);
-            }
-        } else {
-            Game.state.dlcFlags.diplomacySystem = false;
-        }
-    },
+    }
 };
+
+if (typeof window !== 'undefined') window.DlcCore = DlcCore;

@@ -382,11 +382,8 @@ const Desk = {
         const contacts = Game.state.contacts;
         const partner = Game.state.partner;
         const playerName = Game.state.character.name || 'Tu';
-        const playerAvatar = Game.state.character.avatar || '🫵';
-
         let html = `<div class="cork-center">
             <div class="cork-node cork-player">
-                <span class="cork-avatar">${playerAvatar}</span>
                 <span class="cork-name">${this.esc(playerName)}</span>
             </div>
         </div>`;
@@ -399,7 +396,6 @@ const Desk = {
             const betrayedClass = c.betrayed ? 'cork-betrayed' : '';
             html += `
                 <div class="cork-node cork-contact ${strength} ${favoriteClass} ${betrayedClass}" style="--i:${i}; --total:${contacts.length}">
-                    <span class="cork-avatar">${c.emoji}</span>
                     <span class="cork-name">${this.esc(c.name.split(' ')[0])}</span>
                     <span class="cork-relation">${c.relation}%</span>
                     <div class="cork-string ${strength}"></div>
@@ -410,7 +406,6 @@ const Desk = {
         if (partner) {
             html += `
                 <div class="cork-node cork-partner">
-                    <span class="cork-avatar">❤️</span>
                     <span class="cork-name">${this.esc(partner.name.split(' ')[0])}</span>
                     <span class="cork-relation">${partner.support}% supporto</span>
                     <div class="cork-string strong"></div>

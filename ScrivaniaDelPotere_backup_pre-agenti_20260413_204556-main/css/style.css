@@ -1552,14 +1552,7 @@ html, body {
 .contact-header-row {
     display: flex; align-items: center; gap: 10px;
 }
-.contact-avatar {
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    background: var(--phone-accent);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px; color: white;
-    flex-shrink: 0;
-}
+
 .contact-info { flex: 1; min-width: 0; }
 .contact-name { font-size: 15px; font-weight: 600; }
 .contact-status { font-size: 11px; color: #999; margin-top: 1px; }
@@ -2944,20 +2937,6 @@ html, body {
     animation: coffeeSip 0.5s ease;
 }
 
-/* ============================================
-   15. AVATAR STAMP SELECTION
-   ============================================ */
-
-.avatar-stamps {
-    display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
-}
-.avatar-stamp {
-    width: 70px; height: 80px;
-    font-size: 12px;
-}
-.avatar-stamp .stamp-icon { font-size: 32px; }
-.avatar-row { transition: max-height 0.4s ease, opacity 0.4s ease; }
-.avatar-row.hidden { max-height: 0; opacity: 0; overflow: hidden; margin: 0; padding: 0; }
 
 /* ============================================
    16. TASK PROGRESS BAR
@@ -3166,7 +3145,7 @@ html, body {
     border: 2px solid var(--gold-accent);
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-.cork-avatar { font-size: 24px; }
+
 .cork-name {
     font-family: var(--font-typewriter);
     font-size: 10px;
@@ -4129,22 +4108,10 @@ html, body {
 }
 
 /* ============================================
-   41. FOTO SEGNALETICA — Avatar Instructions
+
    ============================================ */
 
-.avatar-warning {
-    color: var(--ink-red);
-    font-weight: bold;
-    text-decoration: underline;
-}
-.avatar-instructions {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    color: #888;
-    font-style: italic;
-    margin: -4px 0 10px 0;
-    line-height: 1.4;
-}
+
 
 /* ============================================
    42. ANTEPRIMA TESSERA
@@ -4168,10 +4135,7 @@ html, body {
     margin-bottom: 6px;
     text-transform: uppercase;
 }
-.preview-card-avatar {
-    font-size: 36px;
-    margin: 4px 0;
-}
+
 .preview-card-name {
     font-family: var(--font-typewriter);
     font-size: 13px;
@@ -4448,8 +4412,8 @@ html, body {
     background: rgba(46,125,50,0.15);
     box-shadow: 0 0 20px rgba(46,125,50,0.3);
 }
-.mentor-avatar {
-    font-size: 48px;
+.mentor-icon {
+    font-size: 40px;
     margin-bottom: 12px;
 }
 .mentor-ideology {
@@ -6235,14 +6199,49 @@ html, body {
     margin-top: -1px;
 }
 
-.marker-inner-dot {
-    font-size: 8px;
-    color: #333;
-}
 @keyframes cityPulse {
     0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.2); opacity: 0.8; }
+    50% { transform: scale(1.15); opacity: 0.9; }
 }
+
+/* Base dot style */
+.city-marker-dot {
+    width: 8px;
+    height: 8px;
+    background: #FFF;
+    border-radius: 50%;
+    border: 1.5px solid #333;
+    transition: all 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Tiers sizes */
+.citta_grande .city-marker-dot { width: 14px; height: 14px; border: 2px solid #FFF; box-shadow: 0 0 10px rgba(255,255,255,0.4); }
+.citta_media .city-marker-dot  { width: 11px; height: 11px; }
+.citta_piccola .city-marker-dot { width: 8px; height: 8px; }
+.comune .city-marker-dot        { width: 6px; height: 6px; border-width: 1px; }
+
+/* Status: Visited */
+.city-marker-wrapper.visited .city-marker-dot {
+    border-color: #888 !important;
+}
+
+/* Status: Current */
+.city-marker-wrapper.current .city-marker-dot {
+    background: #FFD600;
+    border-color: #000;
+    animation: cityPulse 2s infinite ease-in-out;
+}
+.city-marker-wrapper.current .city-marker-dot::after {
+    content: '★';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    color: #000;
+}
+.citta_grande.current .city-marker-dot::after { font-size: 12px; }
+.comune.current .city-marker-dot::after        { font-size: 6px; }
 .city-marker-label {
     font-family: var(--font-body);
     font-size: 10px;
@@ -6782,7 +6781,7 @@ html, body {
 #relazioni-content .cork-player { display: inline-flex; flex-direction: column; align-items: center; }
 #relazioni-content .cork-connections { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 #relazioni-content .cork-node { text-align: center; padding: 6px; min-width: 60px; }
-#relazioni-content .cork-avatar { font-size: 20px; display: block; }
+
 #relazioni-content .cork-name { font-size: 10px; display: block; color: #3E2723; }
 #relazioni-content .cork-relation { font-size: 9px; color: #8D6E63; }
 #relazioni-content .cork-summary { margin-top: 12px; padding-top: 8px; border-top: 1px dashed #D5C5A5; font-size: 10px; }

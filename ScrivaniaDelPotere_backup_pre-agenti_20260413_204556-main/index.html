@@ -229,15 +229,15 @@
                 </div>
                 <div class="tab-nav">
                     <button class="tab-prev" data-prev="3">← Indietro</button>
-                    <button id="btn-approve" class="approve-stamp" disabled><span>APPROVATO</span></button>
+                    <button id="btn-approve" class="approve-stamp" disabled><span>INIZIA QUI</span></button>
                 </div>
                 <div class="error-msg" id="char-error" role="alert" aria-live="assertive" aria-atomic="true"></div>
             </div>
             <!-- B. Macchia di caffè dopo inattività -->
-            <div class="doc-coffee-stain hidden" id="doc-coffee-stain">☕</div>
+            <div class="doc-coffee-stain hidden" id="doc-coffee-stain" aria-hidden="true">☕</div>
             </div>
         </div>
-        <div class="burocrate-msg hidden" id="burocrate-msg"></div>
+        <div class="burocrate-msg hidden" id="burocrate-msg" aria-hidden="true"></div>
     </div>
 
     <!-- ===== SCREEN: LETTERA DEL SEGRETARIO (E + K) ===== -->
@@ -348,10 +348,19 @@
 
         <!-- Visual Effects Layer -->
         <div id="vfx-layer">
-            <div class="coffee-stain" id="vfx-stain1"></div>
-            <div class="coffee-stain" id="vfx-stain2"></div>
-            <div class="burn-mark" id="vfx-burn1"></div>
-            <div class="burn-mark" id="vfx-burn2"></div>
+            <div class="desk-coffeecup" aria-hidden="true">
+                <div class="coffee-liquid">
+                    <div id="coffee-surface" class="coffee-surface"></div>
+                </div>
+                <div class="coffee-stain" id="vfx-stain1"></div>
+                <div class="coffee-stain stain-2" id="vfx-stain2"></div>
+            </div>
+
+            <!-- 📄 Documenti e VFX sparsi -->
+            <div id="vfx-burn1" class="paper-burn" aria-hidden="true"></div>
+            <div id="vfx-burn2" class="paper-burn burn-2" aria-hidden="true"></div>
+            <div class="desk-paper-stack" aria-hidden="true"></div>
+            <div class="desk-pen" aria-hidden="true"></div>
         </div>
 
         <!-- Dimming overlay for unpaid bills -->
@@ -434,9 +443,6 @@
             <!-- Row 4 (extra): Decorations -->
 
             <div id="desk-center">
-                <div class="desk-pen"></div>
-                <div class="desk-paperclip"></div>
-                <div class="desk-coffeecup">☕</div>
             </div>
 
             <!-- 🎨 Desk Decorations Container -->

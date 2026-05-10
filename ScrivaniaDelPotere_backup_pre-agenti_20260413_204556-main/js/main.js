@@ -153,14 +153,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const DLC_CATALOG = [
         // === EXPANSION PACKS ===
         {
-            id: 'dlc_toghe_judiciary',
+            id: 'dlc_giustizia_magistratura',
             type: 'Expansion',
             title: '🏛️ Le Toghe — Sistema Giudiziario',
             desc: 'Indagini, processi, corruzione giudiziale, magistrati come personaggi ricorrenti. Gratuito: eventi base. Completo: sistema tributi, avvocati difensori, gradi di giudizio.',
             systems: ['judiciary.js'],
         },
         {
-            id: 'dlc_oltre_confini_diplomacy',
+            id: 'dlc_politica_estera',
             type: 'Expansion',
             title: '🌍 Oltre i Confini — Diplomazia e Geopolitica',
             desc: 'Accordi bilaterali, lobbying UE, conti offshore, relazioni internazionali. Gratuito: notizie generiche estere. Completo: schermata diplomatica, gestione dossier, fondi EU.',

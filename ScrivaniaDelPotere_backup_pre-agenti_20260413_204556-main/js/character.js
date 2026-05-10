@@ -5,7 +5,7 @@
 
 const Character = {
     MENTORS_BY_IDEOLOGY: {
-        'estrema-sinistra': [
+        'sinistra_radicale': [
             { id: 'marta1', archetype: 'marta', name: 'Marta Rossi', shortName: 'compagna Marta', icon: '🚩', ideology: 'sinistra radicale', quote: 'Porta la voce reale dentro le istituzioni.', bonusText: '+15 Coerenza, rete operaia, Assemblea Centro Sociale', effects: { coherence: 15, action: 'assemblea' } },
             { id: 'marta2', archetype: 'marta', name: 'Luca Verdi', shortName: 'compagno Luca', icon: '🚩', ideology: 'sinistra radicale', quote: 'Lotta e resistenza, ogni giorno.', bonusText: '+10 Muscoli, +5 Autenticità, azione Presidio', effects: { muscoli: 10, autenticita: 5, action: 'presidio' } },
             { id: 'marta3', archetype: 'marta', name: 'Sofia Neri', shortName: 'compagna Sofia', icon: '🚩', ideology: 'sinistra radicale', quote: 'Il sindacato è la nostra arma.', bonusText: '+20 relazione con sindacati, +€50 su task politici', effects: { sindacati: true, moneyPerTask: 50 } },
@@ -37,7 +37,7 @@ const Character = {
             { id: 'elena5', archetype: 'elena', name: 'Paola Conti', shortName: 'compagna Paola', icon: '📊', ideology: 'tecnocrate', quote: 'La competenza convince nel lungo periodo.', bonusText: '+5 Carisma tecnico, sblocca Audit Civico', effects: { carisma: 5, action: 'audit' } },
             { id: 'elena6', archetype: 'elena', name: 'Davide Algoritmo', shortName: 'compagno Davide', icon: '📊', ideology: 'tecnocrate', quote: 'Ottimizzare è governare meglio.', bonusText: '+10 Intelligenza, +€40 al giorno', effects: { intelligenza: 10, dailyMoney: 40 } },
         ],
-        'estrema-destra': [
+        'destra_radicale': [
             { id: 'massimo1', archetype: 'massimo', name: 'Massimo Leone', shortName: 'compagno Massimo', icon: '🦅', ideology: 'destra sovranista', quote: 'Ordine e presenza decidono la partita.', bonusText: '+10 Muscoli, rete forze dell\'ordine, Pattuglia di Quartiere', effects: { muscoli: 10, action: 'pattuglia' } },
             { id: 'massimo2', archetype: 'massimo', name: 'Greta Forte', shortName: 'compagna Greta', icon: '🦅', ideology: 'destra sovranista', quote: 'Disciplina prima di tutto.', bonusText: '+8 Muscoli, -5 Stress in crisi', effects: { muscoli: 8, stressMitigation: 5 } },
             { id: 'massimo3', archetype: 'massimo', name: 'Enrico Feroce', shortName: 'compagno Enrico', icon: '🦅', ideology: 'destra sovranista', quote: 'Il territorio si conquista sul campo.', bonusText: '+6 Carisma, +6 reputazione locale', effects: { carisma: 6, reputazione: 6 } },
@@ -45,7 +45,6 @@ const Character = {
             { id: 'massimo5', archetype: 'massimo', name: 'Tommaso Grani', shortName: 'compagno Tommaso', icon: '🦅', ideology: 'destra sovranista', quote: 'Presidio costante, risultati certi.', bonusText: '+5 Muscoli, +€50 da attività territorio', effects: { muscoli: 5, moneyPerTerritory: 50 } },
             { id: 'massimo6', archetype: 'massimo', name: 'Vera Neri', shortName: 'compagna Vera', icon: '🦅', ideology: 'destra sovranista', quote: 'Comando chiaro, squadra compatta.', bonusText: '+10 Muscoli, +5 Coerenza', effects: { muscoli: 10, coherence: 5 } },
         ],
-
     },
 
     MENTOR_AUTONOMO: {
@@ -271,29 +270,7 @@ const Character = {
         },
     },
 
-    AVATARS: {
-        M: [
-            { value: '👨‍🏭', label: 'Operaio' },
-            { value: '👨‍🏫', label: 'Insegnante' },
-            { value: '👨‍⚖️', label: 'Giudice' },
-            { value: '🕺', label: 'Ballerino' },
-            { value: '🕵️‍♂️', label: 'Detective' },
-        ],
-        F: [
-            { value: '👩‍💼', label: 'Manager' },
-            { value: '👩‍🏫', label: 'Insegnante' },
-            { value: '👩‍⚖️', label: 'Giudice' },
-            { value: '💃', label: 'Ballerina' },
-            { value: '🕵️‍♀️', label: 'Detective' },
-        ],
-        X: [
-            { value: '🧑‍💼', label: 'Manager' },
-            { value: '🧑‍🏫', label: 'Insegnante' },
-            { value: '🧑‍⚖️', label: 'Giudice' },
-            { value: '🧑‍🎤', label: 'Artista' },
-            { value: '🕵️', label: 'Detective' },
-        ],
-    },
+
 
     getMentorById(mentorId) {
         const runtimeMentor = (this._currentMentorPool || []).find(m => m.id === mentorId);
@@ -348,13 +325,7 @@ const Character = {
         return bonusItems || 'Nessun bonus';
     },
 
-    getDefaultAvatarForGender(gender) {
-        const avatarList = this.AVATARS[gender] || this.AVATARS['X'];
-        if (!avatarList || avatarList.length === 0) return '👤';
-        // Pick a random avatar from the list for this gender
-        const randomIndex = Math.floor(Math.random() * avatarList.length);
-        return avatarList[randomIndex].value;
-    },
+
 
     getAvailableMentors() {
         const ideology = Game.state.character.ideology;
@@ -590,8 +561,7 @@ const Character = {
                 btn.classList.add('selected');
                 btn.setAttribute('aria-pressed', 'true');
                 Game.state.character.gender = btn.dataset.value;
-                // Avatar generation removed - use default based on gender
-                Game.state.character.avatar = this.getDefaultAvatarForGender(btn.dataset.value);
+
                 this.checkReady();
                 this.updatePreview();
                 this.updateProtocol();
@@ -811,63 +781,22 @@ const Character = {
     updatePreview() {
         const name = document.getElementById('char-name').value.trim();
         const ideology = Game.state.character.ideology;
-        const avatar = Game.state.character.avatar;
+
         const ideoClass = Game.IDEOLOGY_CLASSES[ideology];
 
         const previewName = document.getElementById('preview-name');
         const previewIdeology = document.getElementById('preview-ideology');
-        const previewAvatar = document.getElementById('preview-avatar');
+
         const previewNumber = document.getElementById('preview-number');
         const protocolEl = document.getElementById('doc-protocol-num');
 
         if (previewName) previewName.textContent = name || '—';
         if (previewIdeology) previewIdeology.textContent = ideoClass ? `${ideoClass.icon} ${ideoClass.label}` : '—';
-        if (previewAvatar) previewAvatar.textContent = avatar || '?';
+
         if (previewNumber && protocolEl) previewNumber.textContent = protocolEl.textContent;
     },
 
-    showAvatarSelection(gender) {
-        const row = document.getElementById('avatar-selection');
-        const container = document.getElementById('avatar-stamps');
-        if (!row || !container) return;
 
-        const avatars = this.AVATARS[gender] || this.AVATARS['X'];
-        container.innerHTML = avatars.map((a, i) => `
-            <button class="stamp-btn avatar-stamp" data-group="avatar" data-value="${a.value}" aria-label="${a.label || 'Avatar ' + (i + 1)}" aria-pressed="false">
-                <span class="stamp-icon" aria-hidden="true">${a.value}</span>
-            </button>
-        `).join('');
-
-        row.classList.remove('hidden');
-
-        // Select first by default
-        const firstBtn = container.querySelector('.avatar-stamp');
-        if (firstBtn) {
-            firstBtn.classList.add('selected');
-            firstBtn.setAttribute('aria-pressed', 'true');
-            Game.state.character.avatar = firstBtn.dataset.value;
-            this.updateAvatar(firstBtn.dataset.value);
-        }
-
-        // Bind avatar stamp clicks
-        container.querySelectorAll('.avatar-stamp').forEach(btn => {
-            btn.addEventListener('click', () => {
-                container.querySelectorAll('.avatar-stamp').forEach(b => { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
-                btn.classList.add('selected');
-                btn.setAttribute('aria-pressed', 'true');
-                Game.state.character.avatar = btn.dataset.value;
-                this.updateAvatar(btn.dataset.value);
-                this.updatePreview();
-                this.checkReady();
-            });
-        });
-    },
-
-    updateAvatar(emoji) {
-        const avatar = document.getElementById('char-avatar');
-        avatar.innerHTML = `<span style="font-size:48px">${emoji}</span>`;
-        avatar.classList.add('avatar-set');
-    },
 
     checkReady() {
         const name = this.sanitizeName(document.getElementById('char-name').value.trim());
@@ -879,7 +808,7 @@ const Character = {
         if (!gender) missing.push('Genere');
         if (!ideology) missing.push('Ideologia');
         if (!this._selectedMentorId) missing.push('Mentore');
-        if (!this._selectedStartingCityId) missing.push('Mappa/Citta');
+        if (!this._selectedStartingCityId) missing.push('Mappa/Città');
 
         const allValid = missing.length === 0;
         if (!btn) return;
@@ -894,16 +823,35 @@ const Character = {
 
         const errorEl = document.getElementById('char-error');
         if (errorEl) {
-            errorEl.textContent = allValid
-                ? 'Modulo completo: puoi approvare e iniziare la partita.'
-                : `Completa questi campi: ${missing.join(', ')}.`;
-            errorEl.style.color = allValid ? '#1B5E20' : '';
+            const msg = allValid
+                ? 'Modulo completo: puoi cliccare INIZIA QUI per iniziare la partita.'
+                : `Completa questi campi obbligatori: ${missing.join(', ')}.`;
+            
+            if (errorEl.textContent !== msg) {
+                errorEl.textContent = msg;
+                if (window.SR && !allValid) SR.announce(msg, 'polite');
+            }
+            errorEl.style.color = allValid ? '#1B5E20' : '#B71C1C';
         }
     },
 
     approve() {
         const name = this.sanitizeName(document.getElementById('char-name').value.trim());
-        if (!name || !Game.state.character.gender || !Game.state.character.ideology || !this._selectedMentorId || !this._selectedStartingCityId) return;
+        const missing = [];
+        if (!name) missing.push('Nome');
+        if (!Game.state.character.gender) missing.push('Genere');
+        if (!Game.state.character.ideology) missing.push('Ideologia');
+        if (!this._selectedMentorId) missing.push('Mentore');
+        if (!this._selectedStartingCityId) missing.push('Mappa/Città');
+
+        if (missing.length > 0) {
+            const errorEl = document.getElementById('char-error');
+            if (errorEl) {
+                errorEl.textContent = `Impossibile iniziare. Mancano: ${missing.join(', ')}.`;
+                errorEl.style.color = '#B71C1C';
+            }
+            return;
+        }
 
         // Keep home-selected DLC active after the character sheet hard reset.
         const preservedActiveDlc = Array.isArray(Game.state.flags && Game.state.flags.activeDlc)
@@ -1064,7 +1012,7 @@ const Character = {
             card.className = 'mentor-card';
             card.dataset.mentor = mentor.id;
             card.innerHTML = `
-                <div class="mentor-avatar">${mentor.icon || '🎩'}</div>
+                <div class="mentor-icon">${mentor.icon || '??'}</div>
                 <div class="mentor-ideology">${Game.esc(mentor.ideology)}</div>
                 <div class="mentor-name">${Game.esc(mentor.short_name || mentor.shortName || mentor.name)}</div>
                 <div class="mentor-quote">"${Game.esc(mentor.quote || mentor.description || 'Una buona scelta politica')}"</div>

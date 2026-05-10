@@ -462,7 +462,6 @@ const Phone = {
 
         item.innerHTML = `
             <div class="contact-header-row">
-                <div class="contact-avatar">${contact.emoji}</div>
                 <div class="contact-info">
                     <div class="contact-name">
                         ${this.esc(contact.name)} ${contact.betrayed ? '⚠️' : ''}

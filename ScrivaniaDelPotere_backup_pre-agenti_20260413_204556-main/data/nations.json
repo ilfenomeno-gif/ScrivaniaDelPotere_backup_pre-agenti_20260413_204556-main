@@ -16,7 +16,8 @@
       "Sindaco",
       "Deputato",
       "Ministro",
-      "Presidente del Consiglio"
+      "Presidente del Consiglio",
+      "Presidente del Parlamento Europeo"
     ],
     "salaryMultiplier": 1.541,
     "rentMultiplier": 1,
@@ -137,7 +138,8 @@
       "Député",
       "Ministre",
       "Premier Ministre",
-      "Président de la République"
+      "Président de la République",
+      "Président du Parlement Européen"
     ],
     "salaryMultiplier": 1.696,
     "rentMultiplier": 1.05,
@@ -467,7 +469,8 @@
       "Landtag",
       "Bundesminister",
       "Bundeskanzler",
-      "Kanzler"
+      "Kanzler",
+      "Präsident des Europäischen Parlaments"
     ],
     "salaryMultiplier": 1.923,
     "rentMultiplier": 1.2,
@@ -798,7 +801,8 @@
       "MP (Member of Parliament)",
       "Minister",
       "Shadow Secretary",
-      "Prime Minister"
+      "Prime Minister",
+      "President of the European Parliament"
     ],
     "salaryMultiplier": 1.847,
     "rentMultiplier": 1.2,
@@ -1128,7 +1132,8 @@
       "Alcalde",
       "Diputado",
       "Ministro",
-      "Presidente"
+      "Presidente",
+      "Presidente del Parlamento Europeo"
     ],
     "salaryMultiplier": 1.35,
     "rentMultiplier": 1.2,
@@ -1146,9 +1151,11 @@
       "estremistra": { "localName": "Soberanista", "icon": "🦅", "desc": "Destra identitaria" }
     },
     "mentors": {
-      "sinistra": ["mentor_es_psoe_1", "mentor_es_psoe_2"],
-      "destra": ["mentor_es_pp_1", "mentor_es_pp_2"],
-      "estremistra": ["mentor_es_vox_1", "mentor_es_vox_2"]
+      "radicale": ["sumar_es"],
+      "sinistra": ["psoe_es"],
+      "centro": ["ciudadanos_es"],
+      "destra": ["pp_es"],
+      "estremistra": ["vox_es"]
     }
   },
   "portugal": {
@@ -1162,7 +1169,7 @@
     "headOfState": "Presidente da Republica",
     "headOfGov": "Primeiro-Ministro",
     "currency": "€",
-    "careerRoles": ["Vereador", "Presidente da Camara", "Deputado", "Ministro", "Primeiro-Ministro"],
+    "careerRoles": ["Vereador", "Presidente da Camara", "Deputado", "Ministro", "Primeiro-Ministro", "Presidente do Parlamento Europeu"],
     "salaryMultiplier": 1.1,
     "rentMultiplier": 1,
     "taxRate": 0.22,
@@ -1179,9 +1186,11 @@
       "estremistra": { "localName": "Soberanista", "icon": "🦅", "desc": "Nazional-conservatori" }
     },
     "mentors": {
-      "sinistra": ["mentor_pt_ps_1"],
-      "centro": ["mentor_pt_psd_1"],
-      "populista": ["mentor_pt_chega_1"]
+      "radicale": ["be_pt", "pcp_pt"],
+      "sinistra": ["ps_pt"],
+      "centro": ["centro_pt"],
+      "destra": ["ad_pt", "psd_pt"],
+      "estremistra": ["chega_pt"]
     }
   },
   "benelux": {
@@ -1195,7 +1204,7 @@
     "headOfState": "Consiglio Benelux",
     "headOfGov": "Primo Coordinatore",
     "currency": "€",
-    "careerRoles": ["Councillor", "Regional Deputy", "Federal Deputy", "Minister", "Coordinator"],
+    "careerRoles": ["Councillor", "Regional Deputy", "Federal Deputy", "Minister", "Coordinator", "President of the European Parliament"],
     "salaryMultiplier": 1.4,
     "rentMultiplier": 1.35,
     "taxRate": 0.29,
@@ -1212,9 +1221,11 @@
       "estremistra": { "localName": "National Frontier", "icon": "🦅", "desc": "Sovranismo duro" }
     },
     "mentors": {
-      "centro": ["mentor_bx_union_1"],
-      "sinistra": ["mentor_bx_green_1"],
-      "estremistra": ["mentor_bx_nf_1"]
+      "radicale": ["bx_extreme_left"],
+      "sinistra": ["bx_socialist", "bx_green"],
+      "centro": ["bx_liberal"],
+      "destra": ["bx_christian_democrat"],
+      "estremistra": ["bx_vlaams_belang"]
     }
   },
   "switzerland": {
@@ -1228,7 +1239,7 @@
     "headOfState": "Consiglio Federale",
     "headOfGov": "Presidenza Rotante",
     "currency": "CHF",
-    "careerRoles": ["Gemeinderat", "Kantonsrat", "Nationalrat", "Bundesrat", "Federal President"],
+    "careerRoles": ["Gemeinderat", "Kantonsrat", "Nationalrat", "Bundesrat", "Federal President", "Präsident des Europäischen Parlaments"],
     "salaryMultiplier": 1.6,
     "rentMultiplier": 1.55,
     "taxRate": 0.21,
@@ -1245,9 +1256,11 @@
       "estremistra": { "localName": "Nationalkonservativ", "icon": "🦅", "desc": "Destra sovranista" }
     },
     "mentors": {
-      "centro": ["mentor_ch_fdp_1"],
-      "sinistra": ["mentor_ch_sp_1"],
-      "destra": ["mentor_ch_svp_1"]
+      "radicale": ["ch_linke"],
+      "sinistra": ["ch_sp", "ch_green"],
+      "centro": ["ch_fdp"],
+      "destra": ["ch_mitt"],
+      "estremistra": ["ch_svp"]
     }
   }
 }
