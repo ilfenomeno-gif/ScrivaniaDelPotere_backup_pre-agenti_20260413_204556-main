@@ -1,0 +1,93 @@
+#home-panel-store .home-store-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0 14px;
+}
+
+#home-panel-store .home-store-filter {
+    border: 1px solid rgba(126, 146, 190, 0.45);
+    background: rgba(21, 29, 44, 0.9);
+    color: var(--ui-text);
+    border-radius: 999px;
+    padding: 7px 12px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#home-panel-store .home-store-filter.active {
+    border-color: rgba(245, 158, 11, 0.95);
+    background: rgba(245, 158, 11, 0.16);
+    color: #ffefc5;
+}
+
+#home-panel-store .home-store-bundles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+}
+
+#home-panel-store .home-store-bundle,
+#home-panel-store .home-store-card {
+    border-radius: 14px;
+    border: 1px solid rgba(126, 146, 190, 0.38);
+    padding: 14px;
+    background: linear-gradient(145deg, rgba(30, 40, 60, 0.94), rgba(18, 27, 43, 0.88));
+}
+
+#home-panel-store .home-store-card.active {
+    border-color: rgba(245, 158, 11, 0.95);
+    box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.65) inset;
+}
+
+#home-panel-store .home-store-title {
+    margin: 0 0 4px;
+    line-height: 1.35;
+}
+
+#home-panel-store .shop-item-price,
+#home-panel-store .home-store-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ui-gold);
+    line-height: 1.1;
+    margin: 2px 0 8px;
+}
+
+#home-panel-store .home-store-status {
+    color: #c0cee0;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+#home-panel-store .home-store-mini-desc {
+    font-size: 13px;
+    color: #cfdbeb;
+}
+
+#home-panel-store .btn-buy,
+#home-panel-store .home-store-card-actions .home-action-btn.primary,
+#home-panel-store .home-store-bundle-actions .home-action-btn.primary {
+    background: var(--ui-accent);
+    border-color: var(--ui-accent);
+    border-radius: 10px;
+}
+
+#home-panel-store .btn-buy:active,
+#home-panel-store .home-store-card-actions .home-action-btn.primary:active,
+#home-panel-store .home-store-bundle-actions .home-action-btn.primary:active {
+    transform: scale(0.96);
+}
+
+#home-panel-store .home-store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+}
+
+#home-panel-store .home-store-detail {
+    margin-top: 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(126, 146, 190, 0.42);
+    background: rgba(10, 16, 26, 0.9);
+}

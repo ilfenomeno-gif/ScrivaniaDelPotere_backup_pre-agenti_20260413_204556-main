@@ -1,0 +1,138 @@
+{
+  "nations": {
+    "spain": [
+      {
+        "id": "bilbao",
+        "name": "Bilbao",
+        "region": "Basque Country",
+        "query": "Bilbao, Spain",
+        "tier": 2,
+        "bonus": { "reputazione": 2, "networking": 11 },
+        "malus": { "stress": 2, "concorrenza": 0.9 }
+      },
+      {
+        "id": "malaga",
+        "name": "Malaga",
+        "region": "Andalusia",
+        "query": "Malaga, Spain",
+        "tier": 2,
+        "bonus": { "reputazione": 2, "networking": 10 },
+        "malus": { "stress": 2, "concorrenza": 0.9 }
+      },
+      {
+        "id": "zaragoza",
+        "name": "Zaragoza",
+        "region": "Aragon",
+        "query": "Zaragoza, Spain",
+        "tier": 2,
+        "bonus": { "reputazione": 2, "networking": 9 },
+        "malus": { "stress": 2, "concorrenza": 0.91 }
+      }
+    ],
+    "portugal": [
+      {
+        "id": "braga",
+        "name": "Braga",
+        "region": "Braga",
+        "query": "Braga, Portugal",
+        "tier": 2,
+        "bonus": { "reputazione": 2, "networking": 9 },
+        "malus": { "stress": 1, "concorrenza": 0.9 }
+      },
+      {
+        "id": "faro",
+        "name": "Faro",
+        "region": "Algarve",
+        "query": "Faro, Portugal",
+        "tier": 3,
+        "bonus": { "reputazione": 1, "networking": 8 },
+        "malus": { "stress": 1, "concorrenza": 0.92 }
+      },
+      {
+        "id": "aveiro",
+        "name": "Aveiro",
+        "region": "Aveiro",
+        "query": "Aveiro, Portugal",
+        "tier": 3,
+        "bonus": { "reputazione": 1, "networking": 8 },
+        "malus": { "stress": 1, "concorrenza": 0.92 }
+      }
+    ],
+    "benelux": [
+      {
+        "id": "antwerp",
+        "name": "Antwerp",
+        "region": "Flanders",
+        "query": "Antwerp, Belgium",
+        "tier": 2,
+        "bonus": { "reputazione": 2, "networking": 10 },
+        "malus": { "stress": 2, "concorrenza": 0.89 }
+      },
+      {
+        "id": "rotterdam",
+        "name": "Rotterdam",
+        "region": "South Holland",
+        "query": "Rotterdam, Netherlands",
+        "tier": 2,
+        "bonus": { "reputazione": 2, "networking": 11 },
+        "malus": { "stress": 2, "concorrenza": 0.88 }
+      },
+      {
+        "id": "the_hague",
+        "name": "The Hague",
+        "region": "South Holland",
+        "query": "The Hague, Netherlands",
+        "tier": 2,
+        "bonus": { "reputazione": 2, "networking": 10 },
+        "malus": { "stress": 2, "concorrenza": 0.89 }
+      },
+      {
+        "id": "utrecht",
+        "name": "Utrecht",
+        "region": "Utrecht",
+        "query": "Utrecht, Netherlands",
+        "tier": 2,
+        "bonus": { "reputazione": 2, "networking": 10 },
+        "malus": { "stress": 2, "concorrenza": 0.89 }
+      }
+    ],
+    "switzerland": [
+      {
+        "id": "basel",
+        "name": "Basel",
+        "region": "Basel-Stadt",
+        "query": "Basel, Switzerland",
+        "tier": 2,
+        "bonus": { "reputazione": 2, "networking": 10 },
+        "malus": { "stress": 2, "concorrenza": 0.89 }
+      },
+      {
+        "id": "lausanne",
+        "name": "Lausanne",
+        "region": "Vaud",
+        "query": "Lausanne, Switzerland",
+        "tier": 2,
+        "bonus": { "reputazione": 2, "networking": 10 },
+        "malus": { "stress": 2, "concorrenza": 0.89 }
+      },
+      {
+        "id": "lugano",
+        "name": "Lugano",
+        "region": "Ticino",
+        "query": "Lugano, Switzerland",
+        "tier": 2,
+        "bonus": { "reputazione": 2, "networking": 9 },
+        "malus": { "stress": 1, "concorrenza": 0.9 }
+      },
+      {
+        "id": "st_gallen",
+        "name": "St. Gallen",
+        "region": "St. Gallen",
+        "query": "St. Gallen, Switzerland",
+        "tier": 2,
+        "bonus": { "reputazione": 2, "networking": 9 },
+        "malus": { "stress": 1, "concorrenza": 0.9 }
+      }
+    ]
+  }
+}

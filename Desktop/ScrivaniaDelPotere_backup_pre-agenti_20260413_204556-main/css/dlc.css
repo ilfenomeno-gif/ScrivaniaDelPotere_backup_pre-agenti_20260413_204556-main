@@ -1,0 +1,56 @@
+#home-panel-dlc .home-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+}
+
+#home-panel-dlc .home-list-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(126, 146, 190, 0.38);
+    background: linear-gradient(145deg, rgba(28, 35, 54, 0.95), rgba(19, 27, 43, 0.86));
+    padding: 14px;
+    min-height: 170px;
+}
+
+#home-panel-dlc .home-list-title {
+    margin: 0 0 8px;
+    font-size: 16px;
+    line-height: 1.35;
+}
+
+#home-panel-dlc .home-list-tag {
+    color: #cbd8ea;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+#home-panel-dlc .home-list-item-actions {
+    margin-top: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#home-panel-dlc .dlc-badge {
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #f8fafc;
+    border-radius: 999px;
+    padding: 6px 10px;
+}
+
+#home-panel-dlc .badge-owned {
+    background: #22c55e;
+}
+
+#home-panel-dlc .badge-locked {
+    background: #6b7280;
+}
+
+#home-panel-dlc .badge-new {
+    background: #f59e0b;
+    color: #1f2937;
+}

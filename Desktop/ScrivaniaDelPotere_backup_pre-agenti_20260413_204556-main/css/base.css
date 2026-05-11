@@ -1,0 +1,22 @@
+:root {
+    --ui-bg: #0f1117;
+    --ui-surface: #1a1d27;
+    --ui-surface-alt: #22263a;
+    --ui-border: #2e3250;
+    --ui-accent: #4f6ef7;
+    --ui-gold: #f59e0b;
+    --ui-text: #e2e8f0;
+    --ui-text-muted: #9aa7bb;
+    --ui-danger: #be354b;
+    --ui-success: #22c55e;
+    --ui-radius: 12px;
+    --ui-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+#screen-home {
+    color: var(--ui-text);
+}
+
+#screen-home .hidden {
+    display: none !important;
+}
