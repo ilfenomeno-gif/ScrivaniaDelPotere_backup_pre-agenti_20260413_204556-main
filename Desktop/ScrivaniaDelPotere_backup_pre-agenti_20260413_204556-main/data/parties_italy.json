@@ -1,0 +1,193 @@
+[
+  {
+    "id": "it_fdi",
+    "name": "Fratelli d'Italia",
+    "shortName": "FdI",
+    "logo": "photos/parties/italy/fdi.svg",
+    "icon": "🦅",
+    "color": "#1b3a8a",
+    "ideology": "estremistra",
+    "country": "italy",
+    "isReal": true,
+    "ideologyMatrix": { "tasse": -4, "immigrazione": -8, "ambiente": -3, "difesa": 8, "diritti": -5 },
+    "currents": [
+      {
+        "id": "curr_it_fdi_governo",
+        "name": "Linea di Governo",
+        "icon": "🏛️",
+        "leader": "Giorgia Meloni",
+        "influence": 62,
+        "bonus": "+10% stabilita in coalizione",
+        "malus": "Media ostili +5 stress"
+      }
+    ],
+    "bonuses": [{ "stat": "reputazioneNazionale", "value": 4, "condition": "always", "label": "+4 reputazione nazionale" }],
+    "startingBonus": { "reputazione": 3, "coherence": 4 }
+  },
+  {
+    "id": "it_lega",
+    "name": "Lega",
+    "shortName": "LEGA",
+    "logo": "photos/parties/italy/lega.svg",
+    "icon": "🛡️",
+    "color": "#2f6b3f",
+    "ideology": "populista",
+    "country": "italy",
+    "isReal": true,
+    "ideologyMatrix": { "tasse": -5, "immigrazione": -9, "ambiente": -4, "difesa": 7, "diritti": -6 },
+    "currents": [
+      {
+        "id": "curr_it_lega_identitaria",
+        "name": "Ala Identitaria",
+        "icon": "📢",
+        "leader": "Matteo Salvini",
+        "influence": 70,
+        "bonus": "+500 followers",
+        "malus": "Coerenza volatile"
+      }
+    ],
+    "startingBonus": { "followers": 300, "carisma": 3 }
+  },
+  {
+    "id": "it_pd",
+    "name": "Partito Democratico",
+    "shortName": "PD",
+    "logo": "photos/parties/italy/pd.svg",
+    "icon": "🌹",
+    "color": "#d62828",
+    "ideology": "sinistra",
+    "country": "italy",
+    "isReal": true,
+    "ideologyMatrix": { "tasse": 5, "immigrazione": 5, "ambiente": 6, "difesa": 1, "diritti": 8 },
+    "currents": [
+      {
+        "id": "curr_it_pd_riformista",
+        "name": "Riformisti",
+        "icon": "⚖️",
+        "leader": "Elly Schlein",
+        "influence": 58,
+        "bonus": "+8 reputazione urbana",
+        "malus": "Tensioni interne"
+      }
+    ],
+    "startingBonus": { "reputazione": 4, "coherence": 4 }
+  },
+  {
+    "id": "it_m5s",
+    "name": "Movimento 5 Stelle",
+    "shortName": "M5S",
+    "logo": "photos/parties/italy/m5s.svg",
+    "icon": "⭐",
+    "color": "#f4a261",
+    "ideology": "populista",
+    "country": "italy",
+    "isReal": true,
+    "ideologyMatrix": { "tasse": 1, "immigrazione": 1, "ambiente": 7, "difesa": -1, "diritti": 6 },
+    "currents": [
+      {
+        "id": "curr_it_m5s_movimentista",
+        "name": "Movimentisti",
+        "icon": "⚡",
+        "leader": "Giuseppe Conte",
+        "influence": 64,
+        "bonus": "+12 consenso social",
+        "malus": "Alleanze difficili"
+      }
+    ],
+    "startingBonus": { "reputazione": 2, "morale": 8 }
+  },
+  {
+    "id": "it_fi",
+    "name": "Forza Italia",
+    "shortName": "FI",
+    "logo": "photos/parties/italy/fi.svg",
+    "icon": "🔵",
+    "color": "#1565c0",
+    "ideology": "destra",
+    "country": "italy",
+    "isReal": true,
+    "ideologyMatrix": { "tasse": -3, "immigrazione": -2, "ambiente": 0, "difesa": 4, "diritti": 1 },
+    "currents": [
+      {
+        "id": "curr_it_fi_moderata",
+        "name": "Moderati",
+        "icon": "🤝",
+        "leader": "Antonio Tajani",
+        "influence": 57,
+        "bonus": "+10 networking imprese",
+        "malus": "Base elettorale anziana"
+      }
+    ],
+    "startingBonus": { "money": 70, "reputazioneNazionale": 2 }
+  },
+  {
+    "id": "it_avs",
+    "name": "Alleanza Verdi e Sinistra",
+    "shortName": "AVS",
+    "logo": "photos/parties/italy/avs.svg",
+    "icon": "🌿",
+    "color": "#2a9d8f",
+    "ideology": "radicale",
+    "country": "italy",
+    "isReal": true,
+    "ideologyMatrix": { "tasse": 6, "immigrazione": 8, "ambiente": 10, "difesa": -3, "diritti": 9 },
+    "currents": [
+      {
+        "id": "curr_it_avs_eco",
+        "name": "Eco-Sociale",
+        "icon": "🌍",
+        "leader": "Angelo Bonelli",
+        "influence": 60,
+        "bonus": "+20% popolarita under30",
+        "malus": "Donor industriali in calo"
+      }
+    ],
+    "startingBonus": { "reputazione": 3, "morale": 10 }
+  },
+  {
+    "id": "it_azione_iv",
+    "name": "Azione - Italia Viva",
+    "shortName": "AZ/IV",
+    "icon": "⚖️",
+    "color": "#ffb703",
+    "ideology": "center",
+    "country": "italy",
+    "isReal": true,
+    "ideologyMatrix": { "tasse": 0, "immigrazione": 2, "ambiente": 3, "difesa": 2, "diritti": 4 },
+    "currents": [
+      {
+        "id": "curr_it_azione_iv_riformista",
+        "name": "Riformisti Liberali",
+        "icon": "🧭",
+        "leader": "Carlo Calenda / Matteo Renzi",
+        "influence": 56,
+        "bonus": "+10 successo negoziazioni",
+        "malus": "Base elettorale volatile"
+      }
+    ],
+    "startingBonus": { "networking": 6, "coherence": 2 }
+  },
+  {
+    "id": "it_ppe_civico",
+    "name": "Polo Civico Europeo",
+    "shortName": "PCE",
+    "icon": "🏛️",
+    "color": "#4f6d7a",
+    "ideology": "center_right",
+    "country": "italy",
+    "isReal": false,
+    "ideologyMatrix": { "tasse": -2, "immigrazione": -1, "ambiente": 1, "difesa": 4, "diritti": 1 },
+    "currents": [
+      {
+        "id": "curr_it_pce_main",
+        "name": "Moderati Popolari",
+        "icon": "🤝",
+        "leader": "Giorgio Bellini",
+        "influence": 52,
+        "bonus": "+8 stabilita di coalizione",
+        "malus": "Visibilita mediatica limitata"
+      }
+    ],
+    "startingBonus": { "money": 45, "reputazioneNazionale": 2 }
+  }
+]

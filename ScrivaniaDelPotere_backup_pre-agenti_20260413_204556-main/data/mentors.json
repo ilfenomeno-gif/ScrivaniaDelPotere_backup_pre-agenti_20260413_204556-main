@@ -1,0 +1,1392 @@
+{
+  "italy": {
+    "estrema-sinistra": [
+      {
+        "id": "marta1",
+        "archetype": "marta",
+        "name": "Marta Rossi",
+        "shortName": "compagna Marta",
+        "icon": "🚩",
+        "ideology": "sinistra radicale",
+        "quote": "Porta la voce reale dentro le istituzioni.",
+        "bonusText": "+15 Coerenza, rete operaia, Assemblea Centro Sociale",
+        "effects": {
+          "coherence": 15,
+          "action": "assemblea"
+        }
+      },
+      {
+        "id": "marta2",
+        "archetype": "marta",
+        "name": "Luca Verdi",
+        "shortName": "compagno Luca",
+        "icon": "🚩",
+        "ideology": "sinistra radicale",
+        "quote": "Lotta e resistenza, ogni giorno.",
+        "bonusText": "+10 Muscoli, +5 Autenticità, azione Presidio",
+        "effects": {
+          "muscoli": 10,
+          "autenticita": 5,
+          "action": "presidio"
+        }
+      },
+      {
+        "id": "marta3",
+        "archetype": "marta",
+        "name": "Sofia Neri",
+        "shortName": "compagna Sofia",
+        "icon": "🚩",
+        "ideology": "sinistra radicale",
+        "quote": "Il sindacato è la nostra arma.",
+        "bonusText": "+20 relazione con sindacati, +€50 su task politici",
+        "effects": {
+          "sindacati": true,
+          "moneyPerTask": 50
+        }
+      },
+      {
+        "id": "marta4",
+        "archetype": "marta",
+        "name": "Antonio Bianchi",
+        "shortName": "compagno Antonio",
+        "icon": "🚩",
+        "ideology": "sinistra radicale",
+        "quote": "Ambiente e lavoro, stessa battaglia.",
+        "bonusText": "+5 Intelligenza, sblocca Comitato Ecologico",
+        "effects": {
+          "intelligenza": 5,
+          "action": "ecologico"
+        }
+      },
+      {
+        "id": "marta5",
+        "archetype": "marta",
+        "name": "Elena Gialli",
+        "shortName": "compagna Elena",
+        "icon": "🚩",
+        "ideology": "sinistra radicale",
+        "quote": "La piazza è la nostra voce.",
+        "bonusText": "+10 Carisma, +3 reputazione per comizio",
+        "effects": {
+          "carisma": 10,
+          "repPerComizio": 3
+        }
+      },
+      {
+        "id": "marta6",
+        "archetype": "marta",
+        "name": "Paolo Blu",
+        "shortName": "compagno Paolo",
+        "icon": "🚩",
+        "ideology": "sinistra radicale",
+        "quote": "Formazione e coscienza di classe.",
+        "bonusText": "+15 Coerenza, sblocca Scuola Politica",
+        "effects": {
+          "coherence": 15,
+          "action": "scuola"
+        }
+      }
+    ],
+    "centro": [
+      {
+        "id": "roberto1",
+        "archetype": "roberto",
+        "name": "Roberto Marchetti",
+        "shortName": "compagno Roberto",
+        "icon": "⚖️",
+        "ideology": "centro liberale",
+        "quote": "Il compromesso è l'arte della politica.",
+        "bonusText": "+20 Networking, +€100, Aperitivo con Lobbisti",
+        "effects": {
+          "networking": 20,
+          "money": 100,
+          "action": "aperitivo"
+        }
+      },
+      {
+        "id": "roberto2",
+        "archetype": "roberto",
+        "name": "Giulia Serra",
+        "shortName": "compagna Giulia",
+        "icon": "⚖️",
+        "ideology": "centro liberale",
+        "quote": "La mediazione evita guerre inutili.",
+        "bonusText": "+8 Carisma, -5 Stress da coalizione",
+        "effects": {
+          "carisma": 8,
+          "stressMitigation": 5
+        }
+      },
+      {
+        "id": "roberto3",
+        "archetype": "roberto",
+        "name": "Carlo Vitali",
+        "shortName": "compagno Carlo",
+        "icon": "⚖️",
+        "ideology": "centro liberale",
+        "quote": "Parla con tutti, prometti a pochi.",
+        "bonusText": "+12 Relazioni trasversali, +2 rep nazionale",
+        "effects": {
+          "relationAll": 12,
+          "repNazionale": 2
+        }
+      },
+      {
+        "id": "roberto4",
+        "archetype": "roberto",
+        "name": "Miriam Lodi",
+        "shortName": "compagna Miriam",
+        "icon": "⚖️",
+        "ideology": "centro liberale",
+        "quote": "Bilanci in ordine, nervi saldi.",
+        "bonusText": "+€80, -10 rischio bollette",
+        "effects": {
+          "money": 80,
+          "debtRelief": 10
+        }
+      },
+      {
+        "id": "roberto5",
+        "archetype": "roberto",
+        "name": "Dario Fontana",
+        "shortName": "compagno Dario",
+        "icon": "⚖️",
+        "ideology": "centro liberale",
+        "quote": "I ponti valgono più dei muri.",
+        "bonusText": "+10 Networking, sblocca Tavolo Strategico",
+        "effects": {
+          "networking": 10,
+          "action": "tavolo"
+        }
+      },
+      {
+        "id": "roberto6",
+        "archetype": "roberto",
+        "name": "Silvia Nobile",
+        "shortName": "compagna Silvia",
+        "icon": "⚖️",
+        "ideology": "centro liberale",
+        "quote": "Vinci quando nessuno si sente sconfitto.",
+        "bonusText": "+6 Intelligenza, +6 Carisma",
+        "effects": {
+          "intelligenza": 6,
+          "carisma": 6
+        }
+      }
+    ],
+    "populista": [
+      {
+        "id": "beppe1",
+        "archetype": "beppe",
+        "name": "Beppe Rinaldi",
+        "shortName": "compagno Beppe",
+        "icon": "📢",
+        "ideology": "populista",
+        "quote": "Serve sangue nuovo per sfondare il palazzo.",
+        "bonusText": "+500 Followers, Affondo Populista, boost gazebo/volantinaggio",
+        "effects": {
+          "followers": 500,
+          "action": "affondo"
+        }
+      },
+      {
+        "id": "beppe2",
+        "archetype": "beppe",
+        "name": "Nadia Fabbri",
+        "shortName": "compagna Nadia",
+        "icon": "📢",
+        "ideology": "populista",
+        "quote": "Parla semplice, colpisci forte.",
+        "bonusText": "+350 Followers, +8 Carisma",
+        "effects": {
+          "followers": 350,
+          "carisma": 8
+        }
+      },
+      {
+        "id": "beppe3",
+        "archetype": "beppe",
+        "name": "Rocco Milani",
+        "shortName": "compagno Rocco",
+        "icon": "📢",
+        "ideology": "populista",
+        "quote": "Ogni piazza è un referendum.",
+        "bonusText": "+10 Muscoli, +5 rep locale",
+        "effects": {
+          "muscoli": 10,
+          "reputazione": 5
+        }
+      },
+      {
+        "id": "beppe4",
+        "archetype": "beppe",
+        "name": "Sara Bruni",
+        "shortName": "compagna Sara",
+        "icon": "📢",
+        "ideology": "populista",
+        "quote": "Un video vale più di cento volantini.",
+        "bonusText": "+400 Followers, -5 Coerenza iniziale",
+        "effects": {
+          "followers": 400,
+          "coherence": -5
+        }
+      },
+      {
+        "id": "beppe5",
+        "archetype": "beppe",
+        "name": "Mauro Gatti",
+        "shortName": "compagno Mauro",
+        "icon": "📢",
+        "ideology": "populista",
+        "quote": "Il sistema teme chi urla la verità.",
+        "bonusText": "+€60 da comizi, +6 stress",
+        "effects": {
+          "moneyPerComizio": 60,
+          "stress": 6
+        }
+      },
+      {
+        "id": "beppe6",
+        "archetype": "beppe",
+        "name": "Irene Costa",
+        "shortName": "compagna Irene",
+        "icon": "📢",
+        "ideology": "populista",
+        "quote": "Trasforma la rabbia in consenso.",
+        "bonusText": "+300 Followers, +10 Autenticità",
+        "effects": {
+          "followers": 300,
+          "autenticita": 10
+        }
+      }
+    ],
+    "tecnocrate": [
+      {
+        "id": "elena1",
+        "archetype": "elena",
+        "name": "Elena Ferri",
+        "shortName": "compagna Elena",
+        "icon": "📊",
+        "ideology": "tecnocrate",
+        "quote": "I numeri guidano, gli slogan distraggono.",
+        "bonusText": "+10 Intelligenza, +20% analisi/report, Simulazione Bilancio",
+        "effects": {
+          "intelligenza": 10,
+          "taskTechBoost": 1.2,
+          "action": "bilancio"
+        }
+      },
+      {
+        "id": "elena2",
+        "archetype": "elena",
+        "name": "Marco Dati",
+        "shortName": "compagno Marco",
+        "icon": "📊",
+        "ideology": "tecnocrate",
+        "quote": "Le decisioni senza dati sono superstizione.",
+        "bonusText": "+8 Intelligenza, -8 stress da task tecnici",
+        "effects": {
+          "intelligenza": 8,
+          "stressMitigation": 8
+        }
+      },
+      {
+        "id": "elena3",
+        "archetype": "elena",
+        "name": "Chiara Numeri",
+        "shortName": "compagna Chiara",
+        "icon": "📊",
+        "ideology": "tecnocrate",
+        "quote": "Prima misura, poi prometti.",
+        "bonusText": "+5 Coerenza, +€70 da report",
+        "effects": {
+          "coherence": 5,
+          "moneyPerReport": 70
+        }
+      },
+      {
+        "id": "elena4",
+        "archetype": "elena",
+        "name": "Riccardo Metriche",
+        "shortName": "compagno Riccardo",
+        "icon": "📊",
+        "ideology": "tecnocrate",
+        "quote": "Ogni piano deve reggere ai numeri.",
+        "bonusText": "+6 Intelligenza, +3 reputazione nazionale",
+        "effects": {
+          "intelligenza": 6,
+          "repNazionale": 3
+        }
+      },
+      {
+        "id": "elena5",
+        "archetype": "elena",
+        "name": "Paola Conti",
+        "shortName": "compagna Paola",
+        "icon": "📊",
+        "ideology": "tecnocrate",
+        "quote": "La competenza convince nel lungo periodo.",
+        "bonusText": "+5 Carisma tecnico, sblocca Audit Civico",
+        "effects": {
+          "carisma": 5,
+          "action": "audit"
+        }
+      },
+      {
+        "id": "elena6",
+        "archetype": "elena",
+        "name": "Davide Algoritmo",
+        "shortName": "compagno Davide",
+        "icon": "📊",
+        "ideology": "tecnocrate",
+        "quote": "Ottimizzare è governare meglio.",
+        "bonusText": "+10 Intelligenza, +€40 al giorno",
+        "effects": {
+          "intelligenza": 10,
+          "dailyMoney": 40
+        }
+      }
+    ],
+    "estrema-destra": [
+      {
+        "id": "massimo1",
+        "archetype": "massimo",
+        "name": "Massimo Leone",
+        "shortName": "compagno Massimo",
+        "icon": "🦅",
+        "ideology": "destra sovranista",
+        "quote": "Ordine e presenza decidono la partita.",
+        "bonusText": "+10 Muscoli, rete forze dell'ordine, Pattuglia di Quartiere",
+        "effects": {
+          "muscoli": 10,
+          "action": "pattuglia"
+        }
+      },
+      {
+        "id": "massimo2",
+        "archetype": "massimo",
+        "name": "Greta Forte",
+        "shortName": "compagna Greta",
+        "icon": "🦅",
+        "ideology": "destra sovranista",
+        "quote": "Disciplina prima di tutto.",
+        "bonusText": "+8 Muscoli, -5 Stress in crisi",
+        "effects": {
+          "muscoli": 8,
+          "stressMitigation": 5
+        }
+      },
+      {
+        "id": "massimo3",
+        "archetype": "massimo",
+        "name": "Enrico Feroce",
+        "shortName": "compagno Enrico",
+        "icon": "🦅",
+        "ideology": "destra sovranista",
+        "quote": "Il territorio si conquista sul campo.",
+        "bonusText": "+6 Carisma, +6 reputazione locale",
+        "effects": {
+          "carisma": 6,
+          "reputazione": 6
+        }
+      },
+      {
+        "id": "massimo4",
+        "archetype": "massimo",
+        "name": "Laura Riva",
+        "shortName": "compagna Laura",
+        "icon": "🦅",
+        "ideology": "destra sovranista",
+        "quote": "Sicurezza e identità fanno consenso.",
+        "bonusText": "+7 Muscoli, +2 rep nazionale",
+        "effects": {
+          "muscoli": 7,
+          "repNazionale": 2
+        }
+      },
+      {
+        "id": "massimo5",
+        "archetype": "massimo",
+        "name": "Tommaso Grani",
+        "shortName": "compagno Tommaso",
+        "icon": "🦅",
+        "ideology": "destra sovranista",
+        "quote": "Presidio costante, risultati certi.",
+        "bonusText": "+5 Muscoli, +€50 da attività territorio",
+        "effects": {
+          "muscoli": 5,
+          "moneyPerTerritory": 50
+        }
+      },
+      {
+        "id": "massimo6",
+        "archetype": "massimo",
+        "name": "Vera Neri",
+        "shortName": "compagna Vera",
+        "icon": "🦅",
+        "ideology": "destra sovranista",
+        "quote": "Comando chiaro, squadra compatta.",
+        "bonusText": "+10 Muscoli, +5 Coerenza",
+        "effects": {
+          "muscoli": 10,
+          "coherence": 5
+        }
+      }
+    ]
+  },
+  "france": {
+    "estrema-sinistra": [
+      {
+        "id": "melenchon",
+        "name": "Jean-Luc Melenchon",
+        "shortName": "Jean-Luc",
+        "icon": "🇫🇷",
+        "quote": "La France insoumise!",
+        "bonusText": "+15 Coerenza, rete LFI",
+        "effects": {
+          "coherence": 15
+        }
+      },
+      {
+        "id": "ruffin",
+        "name": "Francois Ruffin",
+        "shortName": "Francois",
+        "icon": "📰",
+        "quote": "Fakir contre le systeme.",
+        "bonusText": "+10 Autenticita, +5 Reputazione",
+        "effects": {
+          "autenticita": 10,
+          "reputazione": 5
+        }
+      },
+      {
+        "id": "autain",
+        "name": "Clementine Autain",
+        "shortName": "Clementine",
+        "icon": "⚖️",
+        "quote": "Feminisme et justice sociale.",
+        "bonusText": "+5 Coerenza, -5 Stress",
+        "effects": {
+          "coherence": 5,
+          "stress": -5
+        }
+      }
+    ],
+    "sinistra": [
+      {
+        "id": "faure",
+        "name": "Olivier Faure",
+        "shortName": "Olivier",
+        "icon": "🔴",
+        "quote": "L'unite avant tout.",
+        "bonusText": "+10 Reputazione, +3 Carisma",
+        "effects": {
+          "reputazione": 10,
+          "carisma": 3
+        }
+      },
+      {
+        "id": "hidalgo",
+        "name": "Anne Hidalgo",
+        "shortName": "Anne",
+        "icon": "🏛️",
+        "quote": "Paris et social-ecologie.",
+        "bonusText": "+8 Reputazione locale, +5 Intelligenza",
+        "effects": {
+          "reputazione": 8,
+          "intelligenza": 5
+        }
+      },
+      {
+        "id": "glucksmann",
+        "name": "Raphael Glucksmann",
+        "shortName": "Raphael",
+        "icon": "🇪🇺",
+        "quote": "La gauche europeenne est possible.",
+        "bonusText": "+6 Rep nazionale, +5 Coerenza",
+        "effects": {
+          "reputazioneNazionale": 6,
+          "coherence": 5
+        }
+      }
+    ],
+    "centro": [
+      {
+        "id": "macron",
+        "name": "Emmanuel Macron",
+        "shortName": "Emmanuel",
+        "icon": "🇫🇷",
+        "quote": "En meme temps...",
+        "bonusText": "+200 euro, +10 Networking",
+        "effects": {
+          "money": 200,
+          "networking": 10
+        }
+      },
+      {
+        "id": "philippe",
+        "name": "Edouard Philippe",
+        "shortName": "Edouard",
+        "icon": "🏛️",
+        "quote": "Le Havre, la France.",
+        "bonusText": "+5 Progressione carriera, -10 Stress",
+        "effects": {
+          "careerProgress": 5,
+          "stress": -10
+        }
+      },
+      {
+        "id": "bayrou",
+        "name": "Francois Bayrou",
+        "shortName": "Francois",
+        "icon": "⚖️",
+        "quote": "Le centre, toujours.",
+        "bonusText": "+15 Reputazione, -5 Coerenza",
+        "effects": {
+          "reputazione": 15,
+          "coherence": -5
+        }
+      }
+    ],
+    "populista": [
+      {
+        "id": "lepen",
+        "name": "Marine Le Pen",
+        "shortName": "Marine",
+        "icon": "📢",
+        "quote": "Rassemblement National.",
+        "bonusText": "+500 Followers, +8 Carisma",
+        "effects": {
+          "followers": 500,
+          "carisma": 8
+        }
+      },
+      {
+        "id": "zemmour",
+        "name": "Eric Zemmour",
+        "shortName": "Eric",
+        "icon": "📺",
+        "quote": "Reconquete!",
+        "bonusText": "+10 Reputazione, -5 Coerenza",
+        "effects": {
+          "reputazione": 10,
+          "coherence": -5
+        }
+      },
+      {
+        "id": "dupont_aignan",
+        "name": "Nicolas Dupont-Aignan",
+        "shortName": "Nicolas",
+        "icon": "🇫🇷",
+        "quote": "Debout la France!",
+        "bonusText": "+8 Muscoli, +5 Reputazione",
+        "effects": {
+          "muscoli": 8,
+          "reputazione": 5
+        }
+      }
+    ],
+    "tecnocrate": [
+      {
+        "id": "attali",
+        "name": "Jacques Attali",
+        "shortName": "Jacques",
+        "icon": "📊",
+        "quote": "Prevoir pour gouverner.",
+        "bonusText": "+10 Intelligenza, +100 euro",
+        "effects": {
+          "intelligenza": 10,
+          "money": 100
+        }
+      },
+      {
+        "id": "barnier",
+        "name": "Michel Barnier",
+        "shortName": "Michel",
+        "icon": "🇪🇺",
+        "quote": "Negociateur en chef.",
+        "bonusText": "+8 Reputazione nazionale, +5 Coerenza",
+        "effects": {
+          "reputazioneNazionale": 8,
+          "coherence": 5
+        }
+      },
+      {
+        "id": "goulard",
+        "name": "Sylvie Goulard",
+        "shortName": "Sylvie",
+        "icon": "📘",
+        "quote": "Institutions before slogans.",
+        "bonusText": "+6 Intelligenza, -5 Stress",
+        "effects": {
+          "intelligenza": 6,
+          "stress": -5
+        }
+      }
+    ],
+    "destra": [
+      {
+        "id": "wauquiez",
+        "name": "Laurent Wauquiez",
+        "shortName": "Laurent",
+        "icon": "🔵",
+        "quote": "Ordre republicain et reformes.",
+        "bonusText": "+8 Muscoli, +6 Reputazione",
+        "effects": {
+          "muscoli": 8,
+          "reputazione": 6
+        }
+      },
+      {
+        "id": "pecresse",
+        "name": "Valerie Pecresse",
+        "shortName": "Valerie",
+        "icon": "🏛️",
+        "quote": "Rigueur et territoire.",
+        "bonusText": "+10 Networking, +5 Intelligenza",
+        "effects": {
+          "networking": 10,
+          "intelligenza": 5
+        }
+      },
+      {
+        "id": "retailleau",
+        "name": "Bruno Retailleau",
+        "shortName": "Bruno",
+        "icon": "⚔️",
+        "quote": "Autorite et responsabilite.",
+        "bonusText": "+5 Coerenza, +5 Reputazione",
+        "effects": {
+          "coherence": 5,
+          "reputazione": 5
+        }
+      }
+    ],
+    "estrema-destra": [
+      {
+        "id": "mariani",
+        "name": "Thierry Mariani",
+        "shortName": "Thierry",
+        "icon": "🦅",
+        "quote": "Souverainete et identite.",
+        "bonusText": "+10 Muscoli, +5 Reputazione",
+        "effects": {
+          "muscoli": 10,
+          "reputazione": 5
+        }
+      },
+      {
+        "id": "bardella",
+        "name": "Jordan Bardella",
+        "shortName": "Jordan",
+        "icon": "📱",
+        "quote": "Generation RN.",
+        "bonusText": "+500 Followers, +5 Carisma",
+        "effects": {
+          "followers": 500,
+          "carisma": 5
+        }
+      },
+      {
+        "id": "de_villiers",
+        "name": "Philippe de Villiers",
+        "shortName": "Philippe",
+        "icon": "🏰",
+        "quote": "Puy du Fou, la France.",
+        "bonusText": "+8 Coerenza, +5 Reputazione",
+        "effects": {
+          "coherence": 8,
+          "reputazione": 5
+        }
+      }
+    ]
+  },
+  "germany": {
+    "estrema-sinistra": [
+      {
+        "id": "wagenknecht",
+        "name": "Sahra Wagenknecht",
+        "shortName": "Sahra",
+        "icon": "🚩",
+        "quote": "Soziale Gerechtigkeit zuerst.",
+        "bonusText": "+10 Coerenza, +5 Reputazione",
+        "effects": {
+          "coherence": 10,
+          "reputazione": 5
+        }
+      },
+      {
+        "id": "ramelow",
+        "name": "Bodo Ramelow",
+        "shortName": "Bodo",
+        "icon": "🏛️",
+        "quote": "Pragmatismus mit Haltung.",
+        "bonusText": "+8 Reputazione, -5 Stress",
+        "effects": {
+          "reputazione": 8,
+          "stress": -5
+        }
+      },
+      {
+        "id": "gysi",
+        "name": "Gregor Gysi",
+        "shortName": "Gregor",
+        "icon": "🎙️",
+        "quote": "Debatte ist Demokratie.",
+        "bonusText": "+6 Carisma, +4 Intelligenza",
+        "effects": {
+          "carisma": 6,
+          "intelligenza": 4
+        }
+      }
+    ],
+    "sinistra": [
+      {
+        "id": "scholz",
+        "name": "Olaf Scholz",
+        "shortName": "Olaf",
+        "icon": "🔴",
+        "quote": "Respekt fur dich.",
+        "bonusText": "+12 Reputazione, +100 euro",
+        "effects": {
+          "reputazione": 12,
+          "money": 100
+        }
+      },
+      {
+        "id": "pistorius",
+        "name": "Boris Pistorius",
+        "shortName": "Boris",
+        "icon": "🛡️",
+        "quote": "Verantwortung zahlt.",
+        "bonusText": "+8 Muscoli, +5 Reputazione",
+        "effects": {
+          "muscoli": 8,
+          "reputazione": 5
+        }
+      },
+      {
+        "id": "esken",
+        "name": "Saskia Esken",
+        "shortName": "Saskia",
+        "icon": "📘",
+        "quote": "Sozial und digital.",
+        "bonusText": "+6 Intelligenza, +5 Coerenza",
+        "effects": {
+          "intelligenza": 6,
+          "coherence": 5
+        }
+      }
+    ],
+    "centro": [
+      {
+        "id": "lindner",
+        "name": "Christian Lindner",
+        "shortName": "Christian",
+        "icon": "⚖️",
+        "quote": "Mehr Fortschritt wagen.",
+        "bonusText": "+12 Networking, +150 euro",
+        "effects": {
+          "networking": 12,
+          "money": 150
+        }
+      },
+      {
+        "id": "habeck",
+        "name": "Robert Habeck",
+        "shortName": "Robert",
+        "icon": "🌿",
+        "quote": "Transformation braucht Mut.",
+        "bonusText": "+8 Intelligenza, +6 Coerenza",
+        "effects": {
+          "intelligenza": 8,
+          "coherence": 6
+        }
+      },
+      {
+        "id": "baerbock",
+        "name": "Annalena Baerbock",
+        "shortName": "Annalena",
+        "icon": "🌍",
+        "quote": "Wertegeleitete Politik.",
+        "bonusText": "+6 Reputazione nazionale, +5 Carisma",
+        "effects": {
+          "reputazioneNazionale": 6,
+          "carisma": 5
+        }
+      }
+    ],
+    "populista": [
+      {
+        "id": "weidel",
+        "name": "Alice Weidel",
+        "shortName": "Alice",
+        "icon": "📢",
+        "quote": "Gegen das Establishment.",
+        "bonusText": "+400 Followers, +8 Carisma",
+        "effects": {
+          "followers": 400,
+          "carisma": 8
+        }
+      },
+      {
+        "id": "chrupalla",
+        "name": "Tino Chrupalla",
+        "shortName": "Tino",
+        "icon": "🗣️",
+        "quote": "Wir vertreten das Volk.",
+        "bonusText": "+10 Reputazione, -5 Coerenza",
+        "effects": {
+          "reputazione": 10,
+          "coherence": -5
+        }
+      },
+      {
+        "id": "maassen",
+        "name": "Hans-Georg Maassen",
+        "shortName": "Maassen",
+        "icon": "🛰️",
+        "quote": "Sicherheit zuerst.",
+        "bonusText": "+8 Muscoli, +5 Reputazione",
+        "effects": {
+          "muscoli": 8,
+          "reputazione": 5
+        }
+      }
+    ],
+    "tecnocrate": [
+      {
+        "id": "merz",
+        "name": "Friedrich Merz",
+        "shortName": "Friedrich",
+        "icon": "📊",
+        "quote": "Wirtschaft first.",
+        "bonusText": "+10 Intelligenza, +120 euro",
+        "effects": {
+          "intelligenza": 10,
+          "money": 120
+        }
+      },
+      {
+        "id": "spahn",
+        "name": "Jens Spahn",
+        "shortName": "Jens",
+        "icon": "🧾",
+        "quote": "Effizienz im Staat.",
+        "bonusText": "+8 Reputazione nazionale, -5 Stress",
+        "effects": {
+          "reputazioneNazionale": 8,
+          "stress": -5
+        }
+      },
+      {
+        "id": "soder",
+        "name": "Markus Soder",
+        "shortName": "Markus",
+        "icon": "🏛️",
+        "quote": "Ordnung und Management.",
+        "bonusText": "+6 Carisma, +6 Reputazione",
+        "effects": {
+          "carisma": 6,
+          "reputazione": 6
+        }
+      }
+    ],
+    "destra": [
+      {
+        "id": "wust",
+        "name": "Hendrik Wust",
+        "shortName": "Hendrik",
+        "icon": "🔵",
+        "quote": "Verantwortung mit Mitte.",
+        "bonusText": "+8 Reputazione, +6 Networking",
+        "effects": {
+          "reputazione": 8,
+          "networking": 6
+        }
+      },
+      {
+        "id": "gunther",
+        "name": "Daniel Gunther",
+        "shortName": "Daniel",
+        "icon": "⚖️",
+        "quote": "Ausgleich statt Lautstarke.",
+        "bonusText": "+5 Coerenza, -5 Stress",
+        "effects": {
+          "coherence": 5,
+          "stress": -5
+        }
+      },
+      {
+        "id": "laschet",
+        "name": "Armin Laschet",
+        "shortName": "Armin",
+        "icon": "🤝",
+        "quote": "Koalitionen brauchen Geduld.",
+        "bonusText": "+10 Networking, +4 Reputazione",
+        "effects": {
+          "networking": 10,
+          "reputazione": 4
+        }
+      }
+    ],
+    "estrema-destra": [
+      {
+        "id": "hoecke",
+        "name": "Bjorn Hocke",
+        "shortName": "Bjorn",
+        "icon": "🦅",
+        "quote": "Konflikt mobilisiert.",
+        "bonusText": "+10 Muscoli, +5 Reputazione",
+        "effects": {
+          "muscoli": 10,
+          "reputazione": 5
+        }
+      },
+      {
+        "id": "krah",
+        "name": "Maximilian Krah",
+        "shortName": "Max",
+        "icon": "📱",
+        "quote": "Digitale Mobilisierung.",
+        "bonusText": "+450 Followers, +5 Carisma",
+        "effects": {
+          "followers": 450,
+          "carisma": 5
+        }
+      },
+      {
+        "id": "sellner",
+        "name": "Martin Sellner",
+        "shortName": "Martin",
+        "icon": "🛡️",
+        "quote": "Identitat als Strategie.",
+        "bonusText": "+8 Coerenza, +5 Reputazione",
+        "effects": {
+          "coherence": 8,
+          "reputazione": 5
+        }
+      }
+    ]
+  },
+  "uk": {
+    "estrema-sinistra": [
+      {
+        "id": "corbyn",
+        "name": "Jeremy Corbyn",
+        "shortName": "Jeremy",
+        "icon": "🚩",
+        "quote": "For the many, not the few.",
+        "bonusText": "+10 Coerenza, +5 Reputazione",
+        "effects": {
+          "coherence": 10,
+          "reputazione": 5
+        }
+      },
+      {
+        "id": "abbott",
+        "name": "Diane Abbott",
+        "shortName": "Diane",
+        "icon": "🎓",
+        "quote": "Justice and equality.",
+        "bonusText": "+8 Autenticita, +5 Carisma",
+        "effects": {
+          "autenticita": 8,
+          "carisma": 5
+        }
+      },
+      {
+        "id": "mcdonnell",
+        "name": "John McDonnell",
+        "shortName": "John",
+        "icon": "📣",
+        "quote": "Organise, educate, mobilise.",
+        "bonusText": "+6 Intelligenza, +5 Networking",
+        "effects": {
+          "intelligenza": 6,
+          "networking": 5
+        }
+      }
+    ],
+    "sinistra": [
+      {
+        "id": "starmer",
+        "name": "Keir Starmer",
+        "shortName": "Keir",
+        "icon": "🔴",
+        "quote": "Change with stability.",
+        "bonusText": "+12 Reputazione, +100 money",
+        "effects": {
+          "reputazione": 12,
+          "money": 100
+        }
+      },
+      {
+        "id": "reeves",
+        "name": "Rachel Reeves",
+        "shortName": "Rachel",
+        "icon": "💷",
+        "quote": "Sound public finances.",
+        "bonusText": "+8 Intelligenza, +6 Coerenza",
+        "effects": {
+          "intelligenza": 8,
+          "coherence": 6
+        }
+      },
+      {
+        "id": "burnham",
+        "name": "Andy Burnham",
+        "shortName": "Andy",
+        "icon": "🏙️",
+        "quote": "Power to the cities.",
+        "bonusText": "+8 Reputazione locale, +5 Carisma",
+        "effects": {
+          "reputazione": 8,
+          "carisma": 5
+        }
+      }
+    ],
+    "centro": [
+      {
+        "id": "davey",
+        "name": "Ed Davey",
+        "shortName": "Ed",
+        "icon": "⚖️",
+        "quote": "Pragmatism wins elections.",
+        "bonusText": "+12 Networking, -5 Stress",
+        "effects": {
+          "networking": 12,
+          "stress": -5
+        }
+      },
+      {
+        "id": "cooper",
+        "name": "Yvette Cooper",
+        "shortName": "Yvette",
+        "icon": "🏛️",
+        "quote": "Security with fairness.",
+        "bonusText": "+6 Reputazione nazionale, +5 Coerenza",
+        "effects": {
+          "reputazioneNazionale": 6,
+          "coherence": 5
+        }
+      },
+      {
+        "id": "mordaunt",
+        "name": "Penny Mordaunt",
+        "shortName": "Penny",
+        "icon": "🇬🇧",
+        "quote": "Service and responsibility.",
+        "bonusText": "+6 Carisma, +120 money",
+        "effects": {
+          "carisma": 6,
+          "money": 120
+        }
+      }
+    ],
+    "populista": [
+      {
+        "id": "farage",
+        "name": "Nigel Farage",
+        "shortName": "Nigel",
+        "icon": "📢",
+        "quote": "Take back control.",
+        "bonusText": "+500 Followers, +8 Carisma",
+        "effects": {
+          "followers": 500,
+          "carisma": 8
+        }
+      },
+      {
+        "id": "tice",
+        "name": "Richard Tice",
+        "shortName": "Richard",
+        "icon": "📺",
+        "quote": "Disrupt Westminster.",
+        "bonusText": "+10 Reputazione, -5 Coerenza",
+        "effects": {
+          "reputazione": 10,
+          "coherence": -5
+        }
+      },
+      {
+        "id": "lee_anderson",
+        "name": "Lee Anderson",
+        "shortName": "Lee",
+        "icon": "🧨",
+        "quote": "Say what others won't.",
+        "bonusText": "+8 Muscoli, +5 Reputazione",
+        "effects": {
+          "muscoli": 8,
+          "reputazione": 5
+        }
+      }
+    ],
+    "tecnocrate": [
+      {
+        "id": "blair",
+        "name": "Tony Blair",
+        "shortName": "Tony",
+        "icon": "📊",
+        "quote": "Modernise to win.",
+        "bonusText": "+10 Intelligenza, +150 money",
+        "effects": {
+          "intelligenza": 10,
+          "money": 150
+        }
+      },
+      {
+        "id": "mandelson",
+        "name": "Peter Mandelson",
+        "shortName": "Peter",
+        "icon": "🧾",
+        "quote": "Strategy is everything.",
+        "bonusText": "+8 Reputazione nazionale, +6 Networking",
+        "effects": {
+          "reputazioneNazionale": 8,
+          "networking": 6
+        }
+      },
+      {
+        "id": "sunak",
+        "name": "Rishi Sunak",
+        "shortName": "Rishi",
+        "icon": "💼",
+        "quote": "Plan with discipline.",
+        "bonusText": "+6 Intelligenza, -5 Stress",
+        "effects": {
+          "intelligenza": 6,
+          "stress": -5
+        }
+      }
+    ],
+    "destra": [
+      {
+        "id": "hunt",
+        "name": "Jeremy Hunt",
+        "shortName": "Jeremy",
+        "icon": "🔵",
+        "quote": "Stability first.",
+        "bonusText": "+8 Reputazione, +5 Coerenza",
+        "effects": {
+          "reputazione": 8,
+          "coherence": 5
+        }
+      },
+      {
+        "id": "badenoch",
+        "name": "Kemi Badenoch",
+        "shortName": "Kemi",
+        "icon": "🏛️",
+        "quote": "Reform the state.",
+        "bonusText": "+8 Carisma, +5 Reputazione",
+        "effects": {
+          "carisma": 8,
+          "reputazione": 5
+        }
+      },
+      {
+        "id": "javid",
+        "name": "Sajid Javid",
+        "shortName": "Sajid",
+        "icon": "📈",
+        "quote": "Growth and order.",
+        "bonusText": "+10 Networking, +100 money",
+        "effects": {
+          "networking": 10,
+          "money": 100
+        }
+      }
+    ],
+    "estrema-destra": [
+      {
+        "id": "braverman",
+        "name": "Suella Braverman",
+        "shortName": "Suella",
+        "icon": "🦅",
+        "quote": "Hard line is clear line.",
+        "bonusText": "+10 Muscoli, +5 Reputazione",
+        "effects": {
+          "muscoli": 10,
+          "reputazione": 5
+        }
+      },
+      {
+        "id": "jenrick",
+        "name": "Robert Jenrick",
+        "shortName": "Robert",
+        "icon": "📱",
+        "quote": "No compromise rhetoric.",
+        "bonusText": "+400 Followers, +5 Carisma",
+        "effects": {
+          "followers": 400,
+          "carisma": 5
+        }
+      },
+      {
+        "id": "baker",
+        "name": "Steve Baker",
+        "shortName": "Steve",
+        "icon": "⚔️",
+        "quote": "Principles over consensus.",
+        "bonusText": "+8 Coerenza, +5 Reputazione",
+        "effects": {
+          "coherence": 8,
+          "reputazione": 5
+        }
+      }
+    ]
+  },
+  "spain": {
+    "sinistra": [
+      {
+        "id": "mentor_es_psoe_1",
+        "name": "Mentor PSOE Madrid",
+        "shortName": "PSOE Mentor",
+        "icon": "🌹",
+        "partyId": "es_psoe",
+        "quote": "Coalizione e territorio.",
+        "bonusText": "+8 reputazione, +4 coerenza",
+        "effects": { "reputazione": 8, "coherence": 4 }
+      }
+    ],
+    "destra": [
+      {
+        "id": "mentor_es_pp_1",
+        "name": "Mentor PP Nacional",
+        "shortName": "PP Mentor",
+        "icon": "🔵",
+        "partyId": "es_pp",
+        "quote": "Gestione e stabilita.",
+        "bonusText": "+10 networking",
+        "effects": { "networking": 10 }
+      }
+    ],
+    "estremistra": [
+      {
+        "id": "mentor_es_vox_1",
+        "name": "Mentor Vox",
+        "shortName": "Vox Mentor",
+        "icon": "🦅",
+        "partyId": "es_vox",
+        "quote": "Linea dura e consenso rapido.",
+        "bonusText": "+6 carisma, +4 stress",
+        "effects": { "carisma": 6, "stress": 4 }
+      }
+    ]
+  },
+  "portugal": {
+    "sinistra": [
+      {
+        "id": "mentor_pt_ps_1",
+        "name": "Mentor PS Lisboa",
+        "shortName": "PS Mentor",
+        "icon": "🌹",
+        "partyId": "pt_ps",
+        "quote": "Riforme graduali, consenso solido.",
+        "bonusText": "+7 reputazione, +3 morale",
+        "effects": { "reputazione": 7, "morale": 3 }
+      }
+    ],
+    "centro": [
+      {
+        "id": "mentor_pt_psd_1",
+        "name": "Mentor PSD Porto",
+        "shortName": "PSD Mentor",
+        "icon": "⚖️",
+        "partyId": "pt_psd",
+        "quote": "Compromesso prima del conflitto.",
+        "bonusText": "+8 networking",
+        "effects": { "networking": 8 }
+      }
+    ],
+    "populista": [
+      {
+        "id": "mentor_pt_chega_1",
+        "name": "Mentor Chega",
+        "shortName": "Chega Mentor",
+        "icon": "📢",
+        "partyId": "pt_chega",
+        "quote": "Visibilita immediata.",
+        "bonusText": "+250 followers",
+        "effects": { "followers": 250 }
+      }
+    ]
+  },
+  "benelux": {
+    "centro": [
+      {
+        "id": "mentor_bx_union_1",
+        "name": "Mentor Civic Union",
+        "shortName": "BCU Mentor",
+        "icon": "🇪🇺",
+        "partyId": "bx_epp_union",
+        "quote": "Diplomazia prima di polarizzazione.",
+        "bonusText": "+10 reputazione nazionale",
+        "effects": { "reputazioneNazionale": 10 }
+      }
+    ],
+    "sinistra": [
+      {
+        "id": "mentor_bx_green_1",
+        "name": "Mentor Green Pact",
+        "shortName": "GPB Mentor",
+        "icon": "🌿",
+        "partyId": "bx_green_pact",
+        "quote": "Transizione e consenso civico.",
+        "bonusText": "+5 coerenza, +5 reputazione",
+        "effects": { "coherence": 5, "reputazione": 5 }
+      }
+    ],
+    "estremistra": [
+      {
+        "id": "mentor_bx_nf_1",
+        "name": "Mentor National Frontier",
+        "shortName": "NF Mentor",
+        "icon": "🛡️",
+        "partyId": "bx_national_frontier",
+        "quote": "Ordine e blocco identitario.",
+        "bonusText": "+5 muscoli, +3 reputazione",
+        "effects": { "muscoli": 5, "reputazione": 3 }
+      }
+    ]
+  },
+  "switzerland": {
+    "centro": [
+      {
+        "id": "mentor_ch_fdp_1",
+        "name": "Mentor FDP Zurich",
+        "shortName": "FDP Mentor",
+        "icon": "⚖️",
+        "partyId": "ch_fdp",
+        "quote": "Conta il dato, non il rumore.",
+        "bonusText": "+120 euro, +6 intelligenza",
+        "effects": { "money": 120, "intelligenza": 6 }
+      }
+    ],
+    "sinistra": [
+      {
+        "id": "mentor_ch_sp_1",
+        "name": "Mentor SP Bern",
+        "shortName": "SP Mentor",
+        "icon": "🌹",
+        "partyId": "ch_sp",
+        "quote": "Stato sociale, consenso stabile.",
+        "bonusText": "+8 reputazione, +4 coerenza",
+        "effects": { "reputazione": 8, "coherence": 4 }
+      }
+    ],
+    "destra": [
+      {
+        "id": "mentor_ch_svp_1",
+        "name": "Mentor SVP",
+        "shortName": "SVP Mentor",
+        "icon": "🦅",
+        "partyId": "ch_svp",
+        "quote": "Disciplina e territorio.",
+        "bonusText": "+6 muscoli, +2 reputazione",
+        "effects": { "muscoli": 6, "reputazione": 2 }
+      }
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+@keyframes home-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes home-card-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes buy-pop {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(79, 110, 247, 0);
+    }
+    50% {
+        transform: scale(0.94);
+        box-shadow: 0 0 0 10px rgba(79, 110, 247, 0.12);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(79, 110, 247, 0);
+    }
+}
+
+#screen-home .home-sidebar,
+#screen-home .home-dashboard,
+#screen-home .home-panel:not(.hidden) {
+    animation: home-fade-up 0.28s ease;
+}
+
+#screen-home .dashboard-grid .stat-card {
+    animation: home-fade-up 0.3s ease;
+}
+
+#screen-home .reveal-stagger {
+    animation: home-card-reveal 0.36s ease both;
+    animation-delay: calc(var(--stagger-index, 0) * 44ms);
+}
+
+#home-panel-dlc .home-list-item,
+#home-panel-store .home-store-card,
+#home-panel-store .home-store-bundle {
+    transition: transform 0.2s ease, box-shadow 0.22s ease, filter 0.22s ease;
+}
+
+#home-panel-store .home-store-grid:hover .home-store-card {
+    transition-delay: calc(var(--stagger-index, 0) * 16ms);
+}
+
+#home-panel-dlc .home-list-item:hover,
+#home-panel-store .home-store-card:hover,
+#home-panel-store .home-store-bundle:hover {
+    transform: translateY(-6px) scale(1.012);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.32);
+    filter: brightness(1.04);
+}
+
+#screen-home .btn-buy.purchase-impact {
+    animation: buy-pop 0.42s cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+html.reduce-motion #screen-home .home-sidebar,
+html.reduce-motion #screen-home .home-dashboard,
+html.reduce-motion #screen-home .home-panel:not(.hidden),
+html.reduce-motion #screen-home .dashboard-grid .stat-card,
+html.reduce-motion #screen-home .reveal-stagger,
+html.reduce-motion #screen-home .btn-buy.purchase-impact {
+    animation: none !important;
+}
+
+html.reduce-motion #home-panel-dlc .home-list-item,
+html.reduce-motion #home-panel-store .home-store-card,
+html.reduce-motion #home-panel-store .home-store-bundle {
+    transition: none !important;
+}

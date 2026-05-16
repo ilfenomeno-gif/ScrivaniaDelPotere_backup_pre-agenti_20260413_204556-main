@@ -1,0 +1,139 @@
+#screen-home .home-hero {
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(128, 154, 211, 0.28);
+    background: radial-gradient(circle at 10% 10%, rgba(79, 110, 247, 0.25), transparent 42%),
+        linear-gradient(160deg, rgba(33, 43, 65, 0.9), rgba(22, 27, 41, 0.84));
+}
+
+#screen-home .home-kicker {
+    color: var(--ui-gold);
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 6px;
+}
+
+#screen-home .home-title {
+    margin: 0 0 4px;
+}
+
+#screen-home .home-welcome {
+    margin: 0;
+}
+
+#screen-home .home-menu {
+    margin: 0;
+}
+
+#screen-home .home-menu-item {
+    text-align: left;
+    border-color: rgba(131, 153, 198, 0.36);
+    background: rgba(23, 31, 47, 0.92);
+    transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+#screen-home .home-menu-item:hover,
+#screen-home .home-menu-item:focus-visible {
+    transform: translateX(4px);
+    border-color: rgba(245, 158, 11, 0.72);
+    background: rgba(35, 47, 70, 0.94);
+}
+
+#screen-home .home-dashboard {
+    margin-bottom: 14px;
+}
+
+#screen-home .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+#screen-home .stat-card {
+    background: linear-gradient(145deg, rgba(35, 46, 70, 0.9), rgba(22, 30, 46, 0.86));
+    border: 1px solid rgba(126, 146, 190, 0.35);
+    border-radius: var(--ui-radius);
+    padding: 14px;
+    box-shadow: var(--ui-shadow);
+}
+
+#screen-home .stat-label {
+    color: var(--ui-text-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+#screen-home .stat-value {
+    margin-top: 6px;
+    margin-bottom: 4px;
+    color: #f8fafc;
+    font-weight: 700;
+    font-size: 21px;
+}
+
+#screen-home .stat-hint {
+    font-size: 12px;
+    color: var(--ui-text-muted);
+}
+
+#screen-home .home-news-feed {
+    border: 1px solid rgba(126, 146, 190, 0.3);
+    border-radius: var(--ui-radius);
+    background: rgba(16, 22, 34, 0.74);
+    padding: 14px;
+}
+
+#screen-home .home-feed-title {
+    margin: 0 0 10px;
+    color: #f7e9c4;
+    font-size: 15px;
+}
+
+#screen-home .home-feed-list {
+    margin: 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 6px;
+    color: var(--ui-text);
+    max-height: 96px;
+    overflow: auto;
+}
+
+#screen-home .home-panel {
+    border: 1px solid rgba(126, 146, 190, 0.4);
+    background: rgba(11, 17, 27, 0.66);
+    border-radius: 14px;
+    margin-top: 12px;
+    padding: 16px;
+}
+
+#screen-home .home-panel h2 {
+    letter-spacing: 0.5px;
+}
+
+#screen-home .home-action-btn {
+    border-color: rgba(126, 146, 190, 0.42);
+    background: rgba(31, 41, 58, 0.95);
+    transition: transform 0.12s ease, filter 0.12s ease;
+}
+
+#screen-home .home-action-btn:hover,
+#screen-home .home-action-btn:focus-visible {
+    filter: brightness(1.12);
+}
+
+#screen-home .home-action-btn:active {
+    transform: scale(0.97);
+}
+
+#screen-home .home-message {
+    margin-top: 14px;
+    border-radius: 8px;
+    background: rgba(79, 110, 247, 0.16);
+    border: 1px solid rgba(79, 110, 247, 0.45);
+    padding: 10px 12px;
+    color: #dbe7ff;
+}
